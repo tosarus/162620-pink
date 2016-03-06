@@ -5,8 +5,162 @@
     <title>HTML Academy: Пинк</title>
   </head>
   <body>
-
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">Продвинутый HTML и CSS</a>».</p>
-
+    <header class="page-header page-header--with-photo">
+      <div class="page-header__logo">
+        <img src="http://placehold.it/75x20" alt="Pink">
+      </div>
+      <nav class="main-menu">
+        <span class="main-menu__toggle main-menu__toggle--closed">Открыть меню</span>
+        <div class="main-menu__wrapper main-menu__wrapper--closed">
+          <ul class="main-menu__item-list">
+            <li class="main-menu__item"><a href="#">Информация</a></li>
+            <li class="main-menu__item"><a href="#">Возможности</a></li>
+            <li class="main-menu__item"><a href="#">Отзывы</a></li>
+            <li class="main-menu__item"><a href="#">Стоимость</a></li>
+          </ul>
+          <span class="main-menu__close-btn">Закрыть меню</span>
+        </div>
+      </nav>
+      <h1 class="page-header__title">
+        Взгляните на жизнь иначе!
+      </h1>
+      <img class="page-header__photo" src="http://placehold.it/500x300" alt="Hand with phone">
+    </header>
+    <main>
+      <section class="app-download">
+        <a class="app-download__main-link" href="#">Скачать приложение</a>
+        <div class="app-download__platform-list">
+          <a class="app-download__platform app-download__platform--apple" href="#">AppStore</a>
+          <a class="app-download__platform app-download__platform--google" href="#">GooglePlay</a>
+          <a class="app-download__platform app-download__platform--microsoft" href="#">WindowsStore</a>
+        </div>
+        <p class="app-download__notice">
+          Доступно для iPhone, iPad, Android, Windows Phone, OS X, Window
+        </p>
+      </section>
+      <section class="advantages">
+        <h2 class="advantages__promo-title">
+          Устали от серости мегаполиса?
+        </h2>
+        <h2 class="advantages__promo-title">
+          Нам есть, что вам предложить!
+        </h2>
+        <div class="advantages__item-list">
+          <div class="advantages__item">
+            <h3 class="advantages__item-title">
+              Поднимает настроение
+            </h3>
+            <p class="advantages__item-text">
+              Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!
+            </p>
+          </div>
+          <div class="advantages__item">
+            <h3 class="advantages__item-title">
+              Меняет мир вокруг
+            </h3>
+            <p class="advantages__item-text">
+              Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект
+            </p>
+          </div>
+          <div class="advantages__item">
+            <h3 class="advantages__item-title">
+              Заводит новых друзей
+            </h3>
+            <p class="advantages__item-text">
+              Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых
+            </p>
+          </div>
+        </div>
+        <img src="http://placehold.it/160x320" alt="Phone with smile">
+      </section>
+      <section class="reviews">
+        <div class="reviews__item-list">
+          <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-1" checked>
+          <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-2">
+          <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-3">
+          <blockquote class="reviews__item">
+            <cite class="reviews__author-name">Николай Петров</cite>
+            <p>
+              Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи!
+              А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
+            </p>
+          </blockquote>
+          <div class="reviews__nav">
+            <label class="reviews__nav-btn" for="reviews-radio-1"></label>
+            <label class="reviews__nav-btn" for="reviews-radio-2"></label>
+            <label class="reviews__nav-btn" for="reviews-radio-3"></label>
+          </div>
+        </div>
+      </section>
+      <section class="prices">
+        <div class="prices__price-list">
+          <input class="prices__nav-switcher" type="radio" name="reviews" id="price-radio-1">
+          <input class="prices__nav-switcher" type="radio" name="reviews" id="price-radio-2" checked>
+          <input class="prices__nav-switcher" type="radio" name="reviews" id="price-radio-3">
+          <div class="prices__price">
+            <section class="price-plan">
+              <header class="price-plan__header">
+                <h2 class="price-plan__name">База</h2>
+                <p></p>
+              </header>
+              <ul class="price-plan__option-list">
+                <li class="price-plan__option price-plan__option-yes">Розовый фильтр</li>
+                <li class="price-plan__option price-plan__option-no">Смайлики</li>
+                <li class="price-plan__option price-plan__option-no">Комментарии</li>
+              </ul>
+            </section>
+          </div>
+          <div class="prices__price">
+            <section class="price-plan">
+              <header class="price-plan__header price-plan__header--hit">
+                <h2 class="price-plan__name">Стандарт</h2>
+                <p></p>
+              </header>
+              <ul class="price-plan__option-list">
+                <li class="price-plan__option price-plan__option-yes">Розовый фильтр</li>
+                <li class="price-plan__option price-plan__option-yes">Смайлики</li>
+                <li class="price-plan__option price-plan__option-no">Комментарии</li>
+              </ul>
+            </section>
+          </div>
+          <div class="prices__price">
+            <section class="price-plan">
+              <header class="price-plan__header">
+                <h2 class="price-plan__name">Анлим</h2>
+                <p></p>
+              </header>
+              <ul class="price-plan__option-list">
+                <li class="price-plan__option price-plan__option-yes">Розовый фильтр</li>
+                <li class="price-plan__option price-plan__option-yes">Смайлики</li>
+                <li class="price-plan__option price-plan__option-yes">Комментарии</li>
+              </ul>
+            </section>
+          </div>
+          <div class="prices__nav">
+            <label for="price-radio-1" class="prices__nav-btn"></label>
+            <label for="price-radio-2" class="prices__nav-btn"></label>
+            <label for="price-radio-3" class="prices__nav-btn"></label>
+          </div>
+        </div>
+      </section>
+      <section class="contacts">
+        <h2 class="contacts__promo-title">
+          Остались вопросы?
+          Свяжитесь с нами!
+        </h2>
+        <div class="contacts__line">
+          <h3 class="contacts__title">Звоните:</h3>
+          <p>+7 (812) 555-66-66</p>
+        </div>
+        <div class="contacts__line">
+          <h3 class="contacts__title">Пишите:</h3>
+          <p>mail@htmlacademy.ru</p>
+        </div>
+        <div class="contacts__line">
+          <h3 class="contacts__title">Приезжайте в гости:</h3>
+          <p>ул. Большая Конюшенная, 19/8</p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
