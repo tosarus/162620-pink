@@ -1,0 +1,53 @@
+.app-download {
+  background: #1d2631;
+  padding: 28px 0 15px;
+  color: white;
+
+  .bg-outline(green);
+
+  &__main-link {
+    display: block;
+    margin: 0 auto 32px;
+    padding: 20px;
+    width: 236px;
+
+    font-size: 18px;
+    line-height: 18px;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    border: 3px solid white;
+    border-radius: 30px;
+  }
+
+  &__platform-list {
+    font-size: 0;
+    margin-bottom: 28px;
+    line-height: 56px;
+  }
+
+  &__platform {
+    display: inline-block;
+    vertical-align: top;
+    .size(48px, 56px);
+    margin: 0 16px;
+
+    &--apple {
+      .add-bg-image("../img/logo-apple.svg", center);
+    }
+
+    &--google {
+      .add-bg-image("../img/logo-android.svg", center);
+    }
+
+    &--microsoft {
+      .add-bg-image("../img/logo-microsoft.svg", center);
+    }
+  }
+
+  &__notice {
+    font-weight: 300;
+    margin: 0;
+    padding: 0 40px;
+  }
+}

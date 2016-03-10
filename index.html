@@ -3,19 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Пинк</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="page-header page-header--with-photo">
-      <div class="page-header__logo">
-        <img src="http://placehold.it/75x20" alt="Pink">
-      </div>
+      <a class="page-header__logo" href="index.html">Pink</a>
       <nav class="main-menu">
-        <span class="main-menu__toggle main-menu__toggle--closed">Открыть меню</span>
+        <span class="main-menu__toggle">Открыть меню</span>
         <div class="main-menu__wrapper main-menu__wrapper--closed">
           <ul class="main-menu__item-list">
-            <li class="main-menu__item"><a href="#">Информация</a></li>
-            <li class="main-menu__item"><a href="#">Возможности</a></li>
-            <li class="main-menu__item"><a href="#">Отзывы</a></li>
+            <li class="main-menu__item"><a href="index.html">Информация</a></li>
+            <li class="main-menu__item"><a href="form.html">Возможности</a></li>
+            <li class="main-menu__item"><a href="photo.html">Отзывы</a></li>
             <li class="main-menu__item"><a href="#">Стоимость</a></li>
           </ul>
           <span class="main-menu__close-btn">Закрыть меню</span>
@@ -24,7 +23,6 @@
       <h1 class="page-header__title">
         Взгляните на жизнь иначе!
       </h1>
-      <img class="page-header__photo" src="http://placehold.it/500x300" alt="Hand with phone">
     </header>
     <main>
       <section class="app-download">
@@ -71,7 +69,6 @@
             </p>
           </div>
         </div>
-        <img src="http://placehold.it/160x320" alt="Phone with smile">
       </section>
       <section class="reviews">
         <div class="reviews__item-list">
@@ -94,10 +91,10 @@
       </section>
       <section class="prices">
         <div class="prices__price-list">
-          <input class="prices__nav-switcher" type="radio" name="reviews" id="price-radio-1">
-          <input class="prices__nav-switcher" type="radio" name="reviews" id="price-radio-2" checked>
-          <input class="prices__nav-switcher" type="radio" name="reviews" id="price-radio-3">
-          <section class="price-plan">
+          <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-1">
+          <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-2" checked>
+          <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-3">
+          <section class="price-plan prices__nav-target-1">
             <header class="price-plan__header">
               <h2 class="price-plan__name">База</h2>
               <span class="price-plan__value">1,99 USD</span>
@@ -108,7 +105,7 @@
               <li class="price-plan__option price-plan__option-no">Комментарии</li>
             </ul>
           </section>
-          <section class="price-plan">
+          <section class="price-plan prices__nav-target-2">
             <header class="price-plan__header price-plan__header--hit">
               <h2 class="price-plan__name">Стандарт</h2>
               <span class="price-plan__value">3,99 USD</span>
@@ -119,7 +116,7 @@
               <li class="price-plan__option price-plan__option-no">Комментарии</li>
             </ul>
           </section>
-          <section class="price-plan">
+          <section class="price-plan prices__nav-target-3">
             <header class="price-plan__header">
               <h2 class="price-plan__name">Анлим</h2>
               <span class="price-plan__value">9,99 USD</span>
@@ -131,9 +128,9 @@
             </ul>
           </section>
           <div class="prices__nav">
-            <label for="price-radio-1" class="prices__nav-btn"></label>
-            <label for="price-radio-2" class="prices__nav-btn"></label>
-            <label for="price-radio-3" class="prices__nav-btn"></label>
+            <label class="prices__nav-btn" for="price-radio-1"></label>
+            <label class="prices__nav-btn" for="price-radio-2"></label>
+            <label class="prices__nav-btn" for="price-radio-3"></label>
           </div>
         </div>
       </section>
@@ -157,5 +154,6 @@
         <div class="contacts__map"></div>
       </section>
     </main>
+    <script src="js/script.js"></script>
   </body>
 </html>

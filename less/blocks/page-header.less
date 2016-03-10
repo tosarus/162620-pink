@@ -1,0 +1,38 @@
+.page-header {
+  position: relative;
+  min-height: 237px;
+  .add-bg-image("../img/bg-back-mobile.jpg"; center top);
+
+  .bg-outline(green);
+
+  &__logo {
+    position: absolute;
+    display: block;
+    z-index: 20;
+    left: 20px;
+    top: 22px;
+    font-size: 0;
+    .size(74px; 22px);
+    .add-bg-image("../img/logo-pink-white-mobile.svg"; center);
+
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+
+  &__title {
+    padding: 90px 40px 0;
+    margin: 0;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 300;
+    color: white;
+  }
+
+  &--with-photo {
+    min-height: 458px;
+    .add-bg-image("../img/iphone-hand-mobile.png"; left bottom);
+    .add-bg-image("../img/bg-back-mobile.jpg"; center top);
+  }
+
+}

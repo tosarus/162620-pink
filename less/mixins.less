@@ -1,0 +1,15 @@
+.add-bg-image(@img, @position) {
+    background-image+: url(@img);
+    background-repeat+: no-repeat;
+    background-position+: @position;
+}
+
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.bg-outline(@color) {
+  background-color: fade(@color, 25%);
+  outline: 2px solid @color;
+}
