@@ -1,0 +1,25 @@
+.prices {
+  .add-bg-image("../img/bg-triangle-white.svg", center top);
+  background-color: #f2f2f2;
+  padding-top: 124px;
+  min-height: 380px;
+
+  .bg-outline(green);
+
+  // &__nav-switcher {
+  //   display: none;
+  // }
+
+  .generate-nav(@controller-id, @counter) when(@counter > 0) {
+    &__nav-target-@{counter} {
+      display: none;
+    }
+    #@{controller-id}-@{counter}:checked ~ &__nav-target-@{counter} {
+      display: block;
+    }
+    .generate-nav(@controller-id, @counter - 1);
+  }
+
+  .generate-nav(price-radio, 3);
+}
+
