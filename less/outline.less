@@ -1,0 +1,58 @@
+@display-outline: 1;
+
+.bg-outline(@color) when (@display-outline = 1) {
+  background-color: fade(@color, 25%);
+  outline: 2px solid @color;
+}
+
+.bg-outline(nobg; @color) when (@display-outline = 1) {
+  outline: 2px solid @color;
+}
+
+.add-bg-outline() {
+  .bg-outline(red);
+
+  & > * {
+    .bg-outline(green);
+  }
+
+  & > * > * {
+    .bg-outline(blue);
+  }
+
+  & > * > * > * {
+    .bg-outline(yellow);
+  }
+}
+
+.add-bg-outline(nobg) {
+  .bg-outline(nobg; red);
+
+  & > * {
+    .bg-outline(green);
+  }
+
+  & > * > * {
+    .bg-outline(blue);
+  }
+
+  & > * > * > * {
+    .bg-outline(yellow);
+  }
+}
+
+.add-bg-outline(nobg-all) {
+  .bg-outline(nobg; red);
+
+  & > * {
+    .bg-outline(nobg; green);
+  }
+
+  & > * > * {
+    .bg-outline(nobg; blue);
+  }
+
+  & > * > * > * {
+    .bg-outline(nobg; yellow);
+  }
+}

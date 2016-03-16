@@ -1,11 +1,117 @@
 .form {
-  .bg-outline(green);
+  .add-bg-outline();
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  &__promo,
+  &__input-set {
+    flex: 0 100%;
+  }
 
   &__input-set {
-    .bg-outline(red);
+    .container();
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: (@tablet-width - 1)) {
+    &__input-set {
+      border: none;
+
+      &--alternate {
+        background: @alt-bg-color;
+      }
+    }
+  }
+
+  &__label,
+  &__input {
+    display: block;
+    text-align: left;
+  }
+
+  &__label {
+    padding-left: 20px;
+  }
+
+  &__input-set:not(&__input-set--alternate) &__label {
+    color: #d22856;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   &__item {
-    .bg-outline(blue);
+    position: relative;
+  }
+
+  &__item-list {
+    .reset-list();
+    text-align: left;
+  }
+
+  &__checkbox,
+  &__radio {
+    display: none;
+  }
+
+  &__checkbox ~ &__label::before,
+  &__radio ~ &__label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid @main-color;
+  }
+
+  &__radio ~ &__label::before {
+    border-radius: 50%;
+  }
+
+  &__checkbox:checked ~ &__label::before,
+  &__radio:checked ~ &__label::before {
+    background: #d22856;
+  }
+
+  &__textarea,
+  &__button {
+    display: block;
+    width: 100%;
+  }
+
+  @media (min-width: @tablet-width) {
+    &--main &__input-set:nth-of-type(1) {
+      order: 1;
+    }
+
+    &--main &__input-set:nth-of-type(2) {
+      order: 4;
+    }
+
+    &--main &__input-set:nth-of-type(3) {
+      order: 3;
+    }
+
+    &--main &__input-set:nth-of-type(4) {
+      order: 2;
+    }
+
+    &--main &__input-set:nth-of-type(5) {
+      order: 5;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &--main &__input-set:nth-of-type(1),
+    &--main &__input-set:nth-of-type(4) {
+      flex: 1;
+    }
   }
 }

@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>HTML Academy: Пинк</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -11,28 +12,28 @@
       <nav class="main-menu">
         <span class="main-menu__toggle">Открыть меню</span>
         <div class="main-menu__wrapper main-menu__wrapper--closed">
-          <ul class="main-menu__item-list">
-            <li class="main-menu__item"><a href="index.html">Информация</a></li>
-            <li class="main-menu__item"><a href="form.html">Возможности</a></li>
-            <li class="main-menu__item"><a href="photo.html">Отзывы</a></li>
-            <li class="main-menu__item"><a href="#">Стоимость</a></li>
-          </ul>
           <span class="main-menu__close-btn">Закрыть меню</span>
+          <ul class="main-menu__item-list">
+            <li class="main-menu__item"><a href="index.html">Главная</a></li>
+            <li class="main-menu__item"><a>Фотографии</a></li>
+            <li class="main-menu__item"><a href="form.html">Конкурс</a></li>
+            <li class="main-menu__item"><a href="http://htmlacademy.ru">HTML Academy</a></li>
+          </ul>
         </div>
       </nav>
-      <h1 class="page-header__title">
+      <h1 class="page-header__title page-header__title--narrow">
         Фотографии пользователей
       </h1>
     </header>
     <main>
       <section class="comments">
         <p class="comments__promo">
-            Взгляните на фотографии, которые выкладывают пользователи!
-            Видите, как не хватает ваших?
+          Взгляните на фотографии, которые выкладывают пользователи!
+          Видите, как не хватает ваших?
         </p>
-        <div class="comments_item-list">
-          <blockquote class="comments__item">
-            <div class="comments__photo comments__photo--hit">
+        <div class="comments__item-list">
+          <blockquote class="comments__item comments__item--top">
+            <div class="comments__photo">
               <img src="http://placehold.it/300x180" alt="Panorama">
             </div>
             <cite class="comments__author">
@@ -125,26 +126,30 @@
           </blockquote>
         </div>
       </section>
-      <form class="form" action="https://echo.htmlacademy.ru" method="post">
-        <p class="form__promo">
+      <section class="photo-editor">
+        <p class="photo-editor__promo">
           Затмите их всех!<br>Выкладывайте все, что накопилось в телефоне!
         </p>
-        <fieldset class="form__input-set form__input-set--black-gray">
-          <div class="form__promo-image">
-            <img src="http://placehold.it/280x380" alt="Road">
-          </div>
-          <div class="form__controls">
-            <input class="form__radio-image form__radio-image--clip" type="radio" name="edit-control" value="clip" checked>
-            <input class="form__radio-image form__radio-image--fill" type="radio" name="edit-control" value="fill">
-            <input class="form__radio-image form__radio-image--contrast" type="radio" name="edit-control" value="contrast">
-            <div class="form__range-control">
-              <div class="form__range-position"></div>
-            </div>
-          </div>
-          <button class="form__button form__button--round" type="submit">Запостить</button>
-          <button class="form__button form__button--round" type="reset" disabled>Отмена</button>
-        </fieldset>
-      </form>
+        <div class="photo-editor__image">
+          <img src="http://placehold.it/280x380" alt="Road">
+        </div>
+        <div class="photo-editor__controls">
+          <form class="form" action="https://echo.htmlacademy.ru" method="post">
+            <fieldset class="form__input-set form__input-set--alternate">
+              <div class="form__controls">
+                <input class="form__radio-image form__radio-image--clip" type="radio" name="edit-control" value="clip" checked>
+                <input class="form__radio-image form__radio-image--fill" type="radio" name="edit-control" value="fill">
+                <input class="form__radio-image form__radio-image--contrast" type="radio" name="edit-control" value="contrast">
+                <div class="form__range-control">
+                  <div class="form__range-position"></div>
+                </div>
+              </div>
+              <button class="form__button form__button--round" type="submit">Запостить</button>
+              <button class="form__button form__button--round" type="reset" disabled>Отмена</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
     </main>
     <footer class="page-footer">
       <div class="page-footer__logo">
@@ -156,7 +161,7 @@
         <a class="social-links__link social-links__link--vm" href="#">Vimeo</a>
       </div>
       <div class="page-footer__copyright">
-        Разработано <a class="page-footer__copyright-link" href="https://htmlacademy.ru">Html academy</a>
+        Разработано <a class="page-footer__copyright-link" href="http://htmlacademy.ru">Html academy</a>
       </div>
     </footer>
     <script src="js/script.js"></script>

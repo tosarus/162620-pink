@@ -1,14 +1,81 @@
 .contacts {
-  min-height: 376px;
+  position: relative;
+  padding-top: 45px;
 
-  .bg-outline(green);
+  .add-bg-outline();
 
   &__map {
-    height: 219px;
-    width: 320px;
-    .add-bg-image("../img/bg-triangle-white-footer.svg", center top);
-    .add-bg-image("../img/bg-map.png", center);
+    min-height: 200px;
 
-    .bg-outline(red);
+    .add-bg-image("../img/bg-triangle-white-footer.svg", center -28px);
+    .add-bg-image("../img/bg-map.png", center);
+  }
+
+  @media (min-width: @tablet-width)  {
+    &__line {
+      width: 300px;
+    }
+
+    &__line:nth-of-type(1) {
+      float: left;
+    }
+
+    &__line:nth-of-type(2) {
+      float: right;
+    }
+
+    &__line:nth-of-type(3) {
+      clear: both;
+      margin: 0 auto;
+    }
+
+    &__map {
+      min-height: 378px;
+      background-position: center top, center;
+      background-size: auto, 100% auto;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &__line {
+      float: none;
+      .display-ib(top);
+    }
+  }
+
+  @media (min-width: @tablet-width)  {
+    &__line {
+      width: 300px;
+    }
+
+    &__line:nth-of-type(1) {
+      float: left;
+    }
+
+    &__line:nth-of-type(2) {
+      float: right;
+    }
+
+    &__line:nth-of-type(3) {
+      clear: both;
+      margin: 0 auto;
+    }
+
+    &__map {
+      min-height: 378px;
+      background-position: center top, center;
+      background-size: auto, 100% auto;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &__line {
+      float: none;
+      .display-ib(top);
+    }
+
+    &__map {
+      min-height: 505px;
+    }
   }
 }

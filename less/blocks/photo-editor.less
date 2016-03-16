@@ -1,0 +1,19 @@
+.photo-editor {
+  .add-bg-outline();
+
+  display: flex;
+  flex-flow: row wrap;
+  .container();
+
+  &__promo {
+    order: -1;
+    flex: 0 100%;
+  }
+
+  @media (min-width: @tablet-width) {
+    &__image,
+    &__controls {
+      flex: 1 auto;
+    }
+  }
+}

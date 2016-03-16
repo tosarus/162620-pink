@@ -1,21 +1,18 @@
 .main-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  min-height: 66px;
+  position: relative;
+  .container();
+
+  text-align: right;
   background: fade(#000, 30%);
 
-  .bg-outline(red);
+  .add-bg-outline(nobg-all);
 
   &__toggle {
-    position: absolute;
-    top: 22px;
-    right: 20px;
-    display: block;
+    .display-ib(top);
+    .size(51px; 66px);
+
     font-size: 0;
     .add-bg-image("../img/icon-menu-burger.svg"; center);
-    .size(50px; 24px);
 
     &:hover {
       opacity: 0.3;
@@ -27,23 +24,14 @@
   }
 
   &__wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
+    .absolute(top);
     background: @main-color;
-    padding-top: 69px;
-
-    &--closed {
-      display: none;
-    }
   }
 
   &__item-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    .reset-list();
+
+    text-align: center;
     border-top: 1px solid black;
   }
 
@@ -55,11 +43,9 @@
 
     a {
       color: white;
+      .set-font(bold; 18px; 32px);
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 18px;
-      line-height: 32px;
-      font-weight: 700;
       vertical-align: middle;
 
       &:hover {
@@ -69,16 +55,73 @@
   }
 
   &__close-btn {
-    position: absolute;
-    top: 21px;
-    right: 19px;
-    .size(24px; 23px);
-    display: block;
+    .display-ib(top);
+    .size(24px; 69px);
+    margin-right: @common-padding-phone;
+
     font-size: 0;
     .add-bg-image("../img/icon-menu-cross.svg"; center);
 
     &:hover {
       opacity: 0.3;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    &__toggle {
+      height: 110px;
+    }
+
+    &__close-btn {
+      height: 110px;
+      margin-right: @common-padding-tablet;
+    }
+  }
+
+  @media (max-width: (@desktop-width - 1)) {
+    &__wrapper {
+      &--closed {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &__toggle,
+    &__close-btn {
+      display: none;
+    }
+
+    &__wrapper {
+      position: static;
+      padding-left: 318px;
+      background: none;
+    }
+
+    &__item-list,
+    &__item {
+      border: none;
+    }
+
+    &__item-list::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    &__item {
+      float: left;
+      padding: 39px 0;
+      margin-right: 80px;
+
+      a {
+        text-transform: none;
+        font-weight: normal;
+      }
+    }
+
+    &__item:last-child {
+      margin-right: 0;
     }
   }
 }

@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>HTML Academy: Пинк</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -11,31 +12,33 @@
       <nav class="main-menu">
         <span class="main-menu__toggle">Открыть меню</span>
         <div class="main-menu__wrapper main-menu__wrapper--closed">
-          <ul class="main-menu__item-list">
-            <li class="main-menu__item"><a href="index.html">Информация</a></li>
-            <li class="main-menu__item"><a href="form.html">Возможности</a></li>
-            <li class="main-menu__item"><a href="photo.html">Отзывы</a></li>
-            <li class="main-menu__item"><a href="#">Стоимость</a></li>
-          </ul>
           <span class="main-menu__close-btn">Закрыть меню</span>
+          <ul class="main-menu__item-list">
+            <li class="main-menu__item"><a>Главная</a></li>
+            <li class="main-menu__item"><a href="photo.html">Фотографии</a></li>
+            <li class="main-menu__item"><a href="form.html">Конкурс</a></li>
+            <li class="main-menu__item"><a href="http://htmlacademy.ru">HTML Academy</a></li>
+          </ul>
         </div>
       </nav>
       <h1 class="page-header__title">
         Взгляните на жизнь иначе!
       </h1>
+      <div class="page-header__apps-wrapper">
+        <section class="app-download">
+          <a class="app-download__main-link" href="#">Скачать приложение</a>
+          <div class="app-download__platform-list">
+            <a class="app-download__platform app-download__platform--apple" href="#">AppStore</a>
+            <a class="app-download__platform app-download__platform--google" href="#">GooglePlay</a>
+            <a class="app-download__platform app-download__platform--microsoft" href="#">WindowsStore</a>
+          </div>
+          <p class="app-download__notice">
+            Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8
+          </p>
+        </section>
+      </div>
     </header>
     <main>
-      <section class="app-download">
-        <a class="app-download__main-link" href="#">Скачать приложение</a>
-        <div class="app-download__platform-list">
-          <a class="app-download__platform app-download__platform--apple" href="#">AppStore</a>
-          <a class="app-download__platform app-download__platform--google" href="#">GooglePlay</a>
-          <a class="app-download__platform app-download__platform--microsoft" href="#">WindowsStore</a>
-        </div>
-        <p class="app-download__notice">
-          Доступно для iPhone, iPad, Android, Windows Phone, OS X, Window
-        </p>
-      </section>
       <section class="advantages">
         <h2 class="advantages__promo-title">
           Устали от серости мегаполиса?
@@ -71,67 +74,85 @@
         </div>
       </section>
       <section class="reviews">
+        <section class="reviews__research">
+          <h2 class="reviews__research-title">Эффект на 24 часа!</h2>
+          <p class="reviews__research-text">
+            Британские ученые провели исследования и доказали,
+            что положительный эффект от использования приложения
+            длится целые сутки!
+          </p>
+          <a class="reviews__research-link" href="#">Узнать больше об исследовании</a>
+        </section>
+        <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-1" checked>
+        <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-2">
+        <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-3">
+        <div class="reviews__nav">
+          <label class="reviews__nav-btn" for="reviews-radio-1"></label>
+          <label class="reviews__nav-btn" for="reviews-radio-2"></label>
+          <label class="reviews__nav-btn" for="reviews-radio-3"></label>
+        </div>
         <div class="reviews__item-list">
-          <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-1" checked>
-          <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-2">
-          <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-3">
           <blockquote class="reviews__item">
-            <cite class="reviews__author-name">Николай Петров</cite>
+            <cite class="reviews__author-name">Николай Петров<span>25 лет, водитель трамвая</span></cite>
             <p>
-              Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи!
-              А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
+              &laquo;Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи!
+              А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!&raquo;
             </p>
           </blockquote>
-          <div class="reviews__nav">
-            <label class="reviews__nav-btn" for="reviews-radio-1"></label>
-            <label class="reviews__nav-btn" for="reviews-radio-2"></label>
-            <label class="reviews__nav-btn" for="reviews-radio-3"></label>
-          </div>
+          <div class="reviews__paginator reviews__paginator--prev">&lt;</div>
+          <div class="reviews__paginator reviews__paginator--next">&gt;</div>
         </div>
       </section>
       <section class="prices">
-        <div class="prices__price-list">
-          <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-1">
-          <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-2" checked>
-          <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-3">
-          <section class="price-plan prices__nav-target-1">
+        <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-1">
+        <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-2" checked>
+        <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-3">
+        <div class="prices__nav">
+          <label class="prices__nav-btn" for="price-radio-1"></label>
+          <label class="prices__nav-btn" for="price-radio-2"></label>
+          <label class="prices__nav-btn" for="price-radio-3"></label>
+        </div>
+        <div class="prices__slider">
+          <section class="price-plan price-plan--no-header">
+            <ul class="price-plan__option-list">
+              <li class="price-plan__option">Розовый фильтр</li>
+              <li class="price-plan__option">Смайлики</li>
+              <li class="price-plan__option">Комментарии</li>
+            </ul>
+          </section>
+          <section class="price-plan">
             <header class="price-plan__header">
               <h2 class="price-plan__name">База</h2>
               <span class="price-plan__value">1,99 USD</span>
             </header>
             <ul class="price-plan__option-list">
-              <li class="price-plan__option price-plan__option-yes">Розовый фильтр</li>
-              <li class="price-plan__option price-plan__option-no">Смайлики</li>
-              <li class="price-plan__option price-plan__option-no">Комментарии</li>
+              <li class="price-plan__option price-plan__option--yes">Розовый фильтр</li>
+              <li class="price-plan__option price-plan__option--no">Смайлики</li>
+              <li class="price-plan__option price-plan__option--no">Комментарии</li>
             </ul>
           </section>
-          <section class="price-plan prices__nav-target-2">
+          <section class="price-plan">
             <header class="price-plan__header price-plan__header--hit">
               <h2 class="price-plan__name">Стандарт</h2>
               <span class="price-plan__value">3,99 USD</span>
             </header>
             <ul class="price-plan__option-list">
-              <li class="price-plan__option price-plan__option-yes">Розовый фильтр</li>
-              <li class="price-plan__option price-plan__option-yes">Смайлики</li>
-              <li class="price-plan__option price-plan__option-no">Комментарии</li>
+              <li class="price-plan__option price-plan__option--yes">Розовый фильтр</li>
+              <li class="price-plan__option price-plan__option--yes">Смайлики</li>
+              <li class="price-plan__option price-plan__option--no">Комментарии</li>
             </ul>
           </section>
-          <section class="price-plan prices__nav-target-3">
+          <section class="price-plan">
             <header class="price-plan__header">
               <h2 class="price-plan__name">Анлим</h2>
               <span class="price-plan__value">9,99 USD</span>
             </header>
             <ul class="price-plan__option-list">
-              <li class="price-plan__option price-plan__option-yes">Розовый фильтр</li>
-              <li class="price-plan__option price-plan__option-yes">Смайлики</li>
-              <li class="price-plan__option price-plan__option-yes">Комментарии</li>
+              <li class="price-plan__option price-plan__option--yes">Розовый фильтр</li>
+              <li class="price-plan__option price-plan__option--yes">Смайлики</li>
+              <li class="price-plan__option price-plan__option--yes">Комментарии</li>
             </ul>
           </section>
-          <div class="prices__nav">
-            <label class="prices__nav-btn" for="price-radio-1"></label>
-            <label class="prices__nav-btn" for="price-radio-2"></label>
-            <label class="prices__nav-btn" for="price-radio-3"></label>
-          </div>
         </div>
       </section>
       <section class="contacts">
@@ -154,6 +175,19 @@
         <div class="contacts__map"></div>
       </section>
     </main>
+    <footer class="page-footer page-footer--closed">
+      <div class="page-footer__logo">
+        <img src="http://placehold.it/150x40" alt="Pink">
+      </div>
+      <div class="social-links">
+        <a class="social-links__link social-links__link--tw" href="#">Tweeter</a>
+        <a class="social-links__link social-links__link--fb" href="#">Facebook</a>
+        <a class="social-links__link social-links__link--vm" href="#">Vimeo</a>
+      </div>
+      <div class="page-footer__copyright">
+        Разработано <a class="page-footer__copyright-link" href="http://htmlacademy.ru">Html academy</a>
+      </div>
+    </footer>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,3 +1,123 @@
 .price-plan {
-  .bg-outline(red);
+  .display-ib(bottom);
+  width: 276px;
+  text-transform: uppercase;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+
+  .add-bg-outline(nobg-all);
+
+  &__header {
+    margin: 0;
+    padding: 16px 0;
+    background-color: #283645;
+    color: white;
+
+    &--hit {
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "ХИТ";
+        position: absolute;
+        left: -20px;
+        top: 7px;
+        .size(80px; 25px);
+        background: #d22856;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__name  {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 6px;
+    .set-font(bold; 18px; 30px);
+  }
+
+  &__value {
+    display: block;
+    margin: 0;
+    padding: 0;
+    .set-font(light; 24px; 30px);
+  }
+
+  &__option-list {
+    .reset-list();
+  }
+
+  &__option {
+    padding-left: 20px;
+    line-height: 59px;
+    border-bottom: 2px solid #e5e5e5;
+    text-align: left;
+
+    &--yes {
+      .add-bg-image("../img/icon-yes.svg"; 228px);
+      background-size: 31px 21px;
+    }
+
+    &--no {
+      .add-bg-image("../img/icon-no.svg"; 228px);
+      background-size: 27px 26px;
+    }
+  }
+
+  @media (max-width: (@tablet-width - 1)) {
+    &--no-header {
+      display: none;
+    }
+    .set-font(14px, 45px);
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 152px;
+
+    &__header {
+      padding: 9px 0;
+    }
+
+    &__option {
+      height: 45px;
+      font-size: 0;
+      background-position: center;
+    }
+
+    &__name {
+      .set-font(bold; 16px; 30px);
+      margin-bottom: 0;
+    }
+
+    &__value {
+      .set-font(light; 18px; 30px);
+    }
+
+    &--no-header &__option {
+      .set-font(14px, 45px);
+      padding-left: 15px;
+      text-transform: none;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 232px;
+
+    &__option {
+      line-height: 59px;
+    }
+
+    &__name  {
+      .set-font(bold; 18px; 30px);
+    }
+
+    &__value {
+      .set-font(light; 24px; 30px);
+    }
+
+    &--no-header &__option {
+      .set-font(18px, 59px);
+    }
+  }
 }
