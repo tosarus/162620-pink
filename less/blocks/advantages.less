@@ -1,46 +1,45 @@
 .advantages {
   background: white;
-  padding: 0;
-  padding-top: 30px;
+  .container();
+  padding-top: 40px;
 
-  .bg-outline(green);
+  .add-bg-outline();
 
   &__promo-title {
     margin: 0;
-    margin-bottom: 30px;
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 29px;
+    margin-bottom: 28px;
+    .set-font(light; 24px; 29px);
 
     &:last-of-type {
-    margin-bottom: 10px;
+      margin-bottom: 0;
     }
   }
 
   &__item-list {
-    padding-top: 120px;
-    padding-bottom: 279px;
+    padding-top: 114px;
+    padding-bottom: 287px;
+
+    .add-bg-image("../img/iphone-screen-mobile.png", center 540px);
     .add-bg-image("../img/bg-triangle-white.svg", center top);
-    .add-bg-image("../img/iphone-screen-mobile.png", center 538px);
-    background-color: #f2f2f2;
+    background-color: @alt-bg-color;
   }
 
   &__item {
     margin: 0;
     padding: 0;
-    margin-bottom: 30px;
+    margin-bottom: 31px;
 
-    .bg-outline(red);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &__item-title {
     margin: 0;
     padding: 0;
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
+    .set-font(bold; 18px; 24px);
     color: black;
   }
 
@@ -48,7 +47,78 @@
     margin: 0;
     padding: 0 20px;
 
-    font-size: 14px;
-    line-height: 24px;
+    .set-font(14px; 24px);
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-top: 50px;
+
+    &__promo-title {
+        margin-bottom: 0;
+      .set-font(light; 40px; 50px);
+
+      &:last-of-type {
+        padding: 0 100px 17px;
+        margin-bottom: 0px;
+      }
+    }
+
+    &__item-list {
+      padding-top: 100px;
+      padding-bottom: 20px;
+
+      text-align: left;
+      background-position: 40px 27px, center top;
+      background-size: 268px auto, auto;
+    }
+
+    &__item {
+      padding-left: (@tablet-width / 2 - @common-padding-tablet);
+      margin-bottom: 45px;
+    }
+
+    &__item-text {
+      padding: 0;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 78px;
+
+    &__promo-title {
+        margin-bottom: 0;
+      .set-font(light; 50px; 61px);
+
+      &:last-of-type {
+        padding: 0 280px 55px;
+        margin-bottom: 0px;
+      }
+    }
+
+    &__item-list {
+      padding-top: 6px;
+      padding-bottom: 76px;
+      text-align: center;
+      .add-bg-image("../img/bg-triangle-white.svg", center top);
+      background-size: 100% auto;
+    }
+
+    &__item {
+      .display-ib(top);
+      margin: 0 35px;
+      padding: 357px 0 20px;
+      width: 240px;
+      .add-bg-image("../img/iphone-screen-mobile.png", center top);
+    }
+
+    &__item-title {
+      .set-font(30px; 30px);
+      margin-bottom: 20px;
+    }
+
+    &__item-text {
+      padding: 0;
+      .set-font(18px; 30px);
+    }
   }
 }

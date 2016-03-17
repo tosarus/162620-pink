@@ -1,15 +1,117 @@
-.add-bg-image(@img, @position) {
+.add-bg-image(@img; @position) {
     background-image+: url(@img);
     background-repeat+: no-repeat;
     background-position+: @position;
 }
 
-.size(@width, @height) {
+.size(@width; @height) {
   width: @width;
   height: @height;
 }
 
-.bg-outline(@color) {
-  background-color: fade(@color, 25%);
-  outline: 2px solid @color;
+.container() {
+  margin: 0;
+  padding: 0 @common-padding-phone;
+
+  @media (min-width: @tablet-width) {
+    padding-left: @common-padding-tablet;
+    padding-right: @common-padding-tablet;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: @common-padding-desktop;
+    padding-right: @common-padding-desktop;
+  }
+}
+
+.absolute(@_; @value) {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.absolute(top; @value: 0) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: @value;
+}
+
+.absolute(bottom; @value: 0) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: @value;
+}
+
+.display-ib(@align) {
+  display: inline-block;
+  vertical-align: @align;
+}
+
+.set-font(@font-size; @line-height) {
+  font-size: @font-size;
+  line-height: @line-height;
+}
+
+.set-font(@_; @font-size; @line-height) {
+  .set-font(@font-size; @line-height);
+}
+
+.set-font(light; @font-size; @line-height) {
+  font-weight: 300;
+}
+
+.set-font(normal; @font-size; @line-height) {
+  font-weight: 400;
+}
+
+.set-font(bold; @font-size; @line-height) {
+  font-weight: 700;
+}
+
+.bg-image-btn(@width; @height; @img) {
+  font-size: 0;
+  .size(@width; @height);
+  .add-bg-image(@img; center);
+
+  &:hover {
+    opacity: 0.3;
+  }
+}
+
+.reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.generate-navigation(@nav-states-count) {
+  &__nav,
+  &__nav-switcher {
+    display: none;
+  }
+
+  &__nav-btn {
+    .display-ib(top);
+    .size(4px; 4px);
+    padding: 0;
+    margin: 0 7px;
+    text-size: 0;
+    background: fade(@main-color, 30%);
+    border: 3px solid transparent;
+    border-radius: 50%;
+  }
+
+  .generate-nav-btn(@counter) when(@counter > 0) {
+    .generate-nav-btn(@counter - 1);
+
+    &__nav-switcher:nth-of-type(@{counter}):checked
+    ~ &__nav &__nav-btn:nth-child(@{counter}) {
+      background: white;
+      border: 3px solid @main-color;
+    }
+  }
+
+  .generate-nav-btn(@nav-states-count);
 }

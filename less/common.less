@@ -1,19 +1,37 @@
 @main-color: #283645;
 @main-bg-color: #ffffff;
-@nonpage-bg-color: #f2f2f2;
+@alt-bg-color: #f2f2f2;
+@common-padding-phone: 20px;
+@common-padding-tablet: 40px;
+@common-padding-desktop: 130px;
+
+@phone-width: 320px;
+@tablet-width: 700px;
+@desktop-width: 1200px;
 
 html {
   background-color: #cccccc;
 }
 
 body {
-  width: 320px;
   margin: 0 auto;
 
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: "Open Sans", Tahoma, sans-serif;
   font-size: 14px;
   line-height: 24px;
   text-align: center;
   background: @main-bg-color;
   color: @main-color;
+
+  @media (min-width: @phone-width) {
+    width: @phone-width;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: @tablet-width;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: @desktop-width;
+  }
 }

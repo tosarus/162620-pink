@@ -1,53 +1,74 @@
 .app-download {
-  background: #1d2631;
-  padding: 28px 0 15px;
+  padding: 29px 0 30px;
   color: white;
 
-  .bg-outline(green);
+  .add-bg-outline(nobg);
 
   &__main-link {
     display: block;
-    margin: 0 auto 32px;
-    padding: 20px;
-    width: 236px;
+    margin: 0;
+    margin-bottom: 32px;
+    padding: 14px 20px 16px;
 
-    font-size: 18px;
-    line-height: 18px;
+    .set-font(bold; 18px; 19px);
     color: white;
-    font-weight: 700;
     text-decoration: none;
+
     border: 3px solid white;
     border-radius: 30px;
   }
 
   &__platform-list {
     font-size: 0;
-    margin-bottom: 28px;
-    line-height: 56px;
+    margin-bottom: 22px;
   }
 
   &__platform {
-    display: inline-block;
-    vertical-align: top;
+    .display-ib(top);
     .size(48px, 56px);
     margin: 0 16px;
 
     &--apple {
-      .add-bg-image("../img/logo-apple.svg", center);
+      .add-bg-image("../img/logo-apple.svg"; center 0px);
     }
 
     &--google {
-      .add-bg-image("../img/logo-android.svg", center);
+      .add-bg-image("../img/logo-android.svg"; center 8px);
     }
 
     &--microsoft {
-      .add-bg-image("../img/logo-microsoft.svg", center);
+      .add-bg-image("../img/logo-microsoft.svg"; center 12px);
     }
   }
 
   &__notice {
-    font-weight: 300;
     margin: 0;
-    padding: 0 40px;
+    padding: 0 20px;
+    font-weight: 300;
+  }
+
+  @media (min-width: @tablet-width) {
+    &__main-link {
+      margin-bottom: 46px;
+    }
+
+    &__platform-list {
+      margin-bottom: 36px;
+    }
+
+    &__notice {
+      .set-font(18px; 24px);
+      padding: 0;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    &__main-link {
+      margin-bottom: 68px;
+
+    &__platform-list {
+      margin-bottom: 54px;
+    }
+    }
   }
 }

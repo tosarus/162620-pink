@@ -1,14 +1,39 @@
 .contacts {
-  min-height: 376px;
+  position: relative;
+  padding-top: 45px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 
-  .bg-outline(green);
+  .add-bg-outline();
+
+  &__promo-title {
+    flex: 0 100%;
+  }
+
+  &__line {
+    min-width: 280px;
+  }
 
   &__map {
-    height: 219px;
-    width: 320px;
-    .add-bg-image("../img/bg-triangle-white-footer.svg", center top);
-    .add-bg-image("../img/bg-map.png", center);
+    flex: 0 100%;
+    min-height: 200px;
 
-    .bg-outline(red);
+    .add-bg-image("../img/bg-triangle-white-footer.svg", center -28px);
+    .add-bg-image("../img/bg-map.png", center);
+  }
+
+  @media (min-width: @tablet-width)  {
+    &__map {
+      min-height: 378px;
+      background-position: center top, center;
+      background-size: auto, 100% auto;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &__map {
+      min-height: 505px;
+    }
   }
 }

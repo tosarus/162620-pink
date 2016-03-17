@@ -1,38 +1,86 @@
 .page-header {
   position: relative;
   min-height: 237px;
+
   .add-bg-image("../img/bg-back-mobile.jpg"; center top);
+  background-color: #1d2631;
 
-  .bg-outline(green);
-
-  &__logo {
-    position: absolute;
-    display: block;
-    z-index: 20;
-    left: 20px;
-    top: 22px;
-    font-size: 0;
-    .size(74px; 22px);
-    .add-bg-image("../img/logo-pink-white-mobile.svg"; center);
-
-    &:hover {
-      opacity: 0.3;
-    }
-  }
+  .add-bg-outline(nobg-all);
 
   &__title {
-    padding: 90px 40px 0;
     margin: 0;
-    font-size: 24px;
-    line-height: 29px;
-    font-weight: 300;
+    padding: 30px;
+
+    .set-font(light; 24px; 29px);
     color: white;
   }
 
   &--with-photo {
-    min-height: 458px;
-    .add-bg-image("../img/iphone-hand-mobile.png"; left bottom);
-    .add-bg-image("../img/bg-back-mobile.jpg"; center top);
+    min-height: 729px;
+
+    .add-bg-image("../img/iphone-hand-mobile.png"; left 172px);
+    .add-bg-image("../img/bg-back-mobile.jpg"; center -4px);
   }
 
+  &__apps-wrapper {
+    .absolute(bottom);
+    .container();
+  }
+
+  @media (min-width: @tablet-width) {
+    min-height: 440px;
+
+    &__title {
+      padding: 75px;
+      .set-font(light; 50px; 60px);
+    }
+
+    &--with-photo {
+      background-position: 210px bottom, center top;
+      background-size: auto 500px, auto 100%;
+    }
+
+    &--with-photo &__title {
+      padding: 93px 90px 2px;
+      width: 200px;
+
+      .set-font(light; 40px; 48px);
+    }
+
+    &__apps-wrapper {
+      position: static;
+      width: 300px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    min-height: 396px;
+
+    &__title {
+      padding: 75px 200px;
+
+      &--narrow {
+        padding: 75px 400px;
+      }
+    }
+
+    &--with-photo {
+      min-height: 853px;
+
+      background-position: 475px bottom, center top;
+      background-size: auto 645px, auto 100%;
+    }
+
+    &--with-photo &__title {
+      padding: 120px 165px 28px;
+      width: 240px;
+
+      .set-font(light; 50px; 61px);
+    }
+
+    &__apps-wrapper {
+      position: static;
+      width: 300px;
+    }
+  }
 }

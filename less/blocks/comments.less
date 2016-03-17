@@ -1,7 +1,26 @@
 .comments {
-  .bg-outline(green);
+  .container();
+
+  .add-bg-outline();
+
+  &__item-list {
+    display: flex;
+    flex-flow: row wrap;
+  }
 
   &__item {
-    .bg-outline(red);
+    flex: 1 250px;
+
+    display: flex;
+    flex-flow: column;
+
+    margin: 10px;
+    min-width: 250px;
+
+    &--top {
+      flex: 0 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }

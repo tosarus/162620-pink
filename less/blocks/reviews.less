@@ -1,6 +1,147 @@
 .reviews {
+  position: relative;
   min-height: 319px;
+  .container();
 
-  background: fade(green, 10%);
-  outline: 2px solid green;
+  background: @main-bg-color;
+  .add-bg-outline(nobg);
+
+  .generate-navigation(3);
+
+  @media (max-width: (@desktop-width - 1)) {
+    &__nav {
+      .absolute(bottom);
+      display: block;
+    }
+
+    &__paginator {
+      display: none;
+    }
+  }
+
+  &__item-list {
+    display: flex;
+  }
+
+  &__paginator {
+    flex: 0 80px;
+    align-self: center;
+    .set-font(bold; 30px; 30px);
+
+    &--prev {
+      order: -1;
+    }
+
+    &--next {
+      order: 1;
+    }
+  }
+
+  &__item {
+    flex: 1 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    margin: 0;
+    .set-font(14px; 30px);
+
+    p {
+      margin: 0;
+      padding: 11px 0;
+    }
+  }
+
+  &__author-name {
+    margin: 0;
+    padding: 0;
+    .set-font(bold; 18px; 30px);
+    color: black;
+    font-style: normal;
+
+    span {
+      display: block;
+      .set-font(normal; 18px; 30px);
+    }
+  }
+
+  @media (max-width: (@tablet-width - 1)) {
+    &__research,
+    &__author-name span {
+      display: none;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-top: 58px;
+
+    &__research {
+      margin: 0;
+      padding-top: 40px;
+      padding-bottom: 80px;
+      padding-left: 310px;
+      padding-right: 0;
+      text-align: left;
+      .set-font(normal; 14px; 24px);
+    }
+
+    &__research-title {
+      margin: 0;
+      margin-bottom: 10px;
+      padding-right: 140px;
+      .set-font(bold; 30px; 36px);
+      color: black;
+    }
+
+    &__research-text {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    &__research-link {
+      color: red;
+    }
+
+    &__item {
+      padding: 0;
+      padding-top: 20px;
+      height: 256px;
+
+      p {
+        order: 1;
+        padding: 0;
+        .set-font(18px; 30px);
+     }
+    }
+
+    &__author-name {
+        order: 2;
+        .set-font(bold; 20px; 30px);
+
+        span {
+          .set-font(normal; 14px; 30px);
+        }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 0;
+
+    &__research {
+      padding-left: 370px;
+      padding-right: 40px;
+      background: @alt-bg-color;
+      .set-font(normal; 18px; 30px);
+    }
+
+    &__research-title {
+      margin-bottom: 20px;
+      .set-font(bold; 30px; 30px);
+    }
+
+    &__research-text {
+      margin-bottom: 30px;
+    }
+  }
 }

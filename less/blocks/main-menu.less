@@ -1,25 +1,27 @@
 .main-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .container();
   min-height: 66px;
+  height: 50px;  // fix issue in IE
+
   background: fade(#000, 30%);
 
-  .bg-outline(red);
+  .add-bg-outline(nobg-all);
+
+  &__logo {
+    position: relative;
+    z-index: 10;
+
+    .bg-image-btn(74px; 22px; "../img/logo-pink-white-mobile.svg");
+  }
 
   &__toggle {
-    position: absolute;
-    top: 22px;
-    right: 20px;
-    display: block;
-    font-size: 0;
-    .add-bg-image("../img/icon-menu-burger.svg"; center);
-    .size(50px; 24px);
-
-    &:hover {
-      opacity: 0.3;
-    }
+    .bg-image-btn(51px; 24px; "../img/icon-menu-burger.svg");
 
     &--closed {
       display: none;
@@ -27,23 +29,16 @@
   }
 
   &__wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    background: @main-color;
+    .absolute(top);
     padding-top: 69px;
-
-    &--closed {
-      display: none;
-    }
+    background: @main-color;
   }
 
   &__item-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    .reset-list();
+    display: flex;
+    flex-direction: column;
+
     border-top: 1px solid black;
   }
 
@@ -55,12 +50,9 @@
 
     a {
       color: white;
+      .set-font(bold; 18px; 32px);
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 18px;
-      line-height: 32px;
-      font-weight: 700;
-      vertical-align: middle;
 
       &:hover {
         color: black;
@@ -70,15 +62,62 @@
 
   &__close-btn {
     position: absolute;
-    top: 21px;
-    right: 19px;
-    .size(24px; 23px);
-    display: block;
-    font-size: 0;
-    .add-bg-image("../img/icon-menu-cross.svg"; center);
+    top: 0;
+    right: @common-padding-phone;
 
-    &:hover {
-      opacity: 0.3;
+    .bg-image-btn(24px; 69px; "../img/icon-menu-cross.svg");
+  }
+
+  @media (min-width: @tablet-width) {
+    min-height: 110px;
+
+    &__wrapper {
+      padding-top: 110px;
+    }
+
+    &__close-btn {
+      height: 110px;
+      right: @common-padding-tablet;
+    }
+  }
+
+  @media (max-width: (@desktop-width - 1)) {
+    &__wrapper {
+      &--closed {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &__toggle,
+    &__close-btn {
+      display: none;
+    }
+
+    &__wrapper {
+      position: static;
+      padding: 0;
+      background: none;
+    }
+
+    &__item-list {
+      flex-direction: row;
+      border: none;
+    }
+
+    &__item {
+      margin-right: 80px;
+      border: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        text-transform: none;
+        font-weight: normal;
+      }
     }
   }
 }
