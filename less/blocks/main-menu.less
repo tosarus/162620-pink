@@ -1,22 +1,27 @@
 .main-menu {
   position: relative;
-  .container();
 
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .container();
+  min-height: 66px;
+  height: 50px;  // fix issue in IE
+
   background: fade(#000, 30%);
 
   .add-bg-outline(nobg-all);
 
+  &__logo {
+    position: relative;
+    z-index: 10;
+
+    .bg-image-btn(74px; 22px; "../img/logo-pink-white-mobile.svg");
+  }
+
   &__toggle {
-    .display-ib(top);
-    .size(51px; 66px);
-
-    font-size: 0;
-    .add-bg-image("../img/icon-menu-burger.svg"; center);
-
-    &:hover {
-      opacity: 0.3;
-    }
+    .bg-image-btn(51px; 24px; "../img/icon-menu-burger.svg");
 
     &--closed {
       display: none;
@@ -25,13 +30,15 @@
 
   &__wrapper {
     .absolute(top);
+    padding-top: 69px;
     background: @main-color;
   }
 
   &__item-list {
     .reset-list();
+    display: flex;
+    flex-direction: column;
 
-    text-align: center;
     border-top: 1px solid black;
   }
 
@@ -46,7 +53,6 @@
       .set-font(bold; 18px; 32px);
       text-decoration: none;
       text-transform: uppercase;
-      vertical-align: middle;
 
       &:hover {
         color: black;
@@ -55,26 +61,23 @@
   }
 
   &__close-btn {
-    .display-ib(top);
-    .size(24px; 69px);
-    margin-right: @common-padding-phone;
+    position: absolute;
+    top: 0;
+    right: @common-padding-phone;
 
-    font-size: 0;
-    .add-bg-image("../img/icon-menu-cross.svg"; center);
-
-    &:hover {
-      opacity: 0.3;
-    }
+    .bg-image-btn(24px; 69px; "../img/icon-menu-cross.svg");
   }
 
   @media (min-width: @tablet-width) {
-    &__toggle {
-      height: 110px;
+    min-height: 110px;
+
+    &__wrapper {
+      padding-top: 110px;
     }
 
     &__close-btn {
       height: 110px;
-      margin-right: @common-padding-tablet;
+      right: @common-padding-tablet;
     }
   }
 
@@ -94,34 +97,27 @@
 
     &__wrapper {
       position: static;
-      padding-left: 318px;
+      padding: 0;
       background: none;
     }
 
-    &__item-list,
-    &__item {
+    &__item-list {
+      flex-direction: row;
       border: none;
     }
 
-    &__item-list::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
     &__item {
-      float: left;
-      padding: 39px 0;
       margin-right: 80px;
+      border: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       a {
         text-transform: none;
         font-weight: normal;
       }
-    }
-
-    &__item:last-child {
-      margin-right: 0;
     }
   }
 }

@@ -1,13 +1,10 @@
 .reviews {
   position: relative;
   min-height: 319px;
+  .container();
+
   background: @main-bg-color;
   .add-bg-outline(nobg);
-
-  &__research,
-  &__item-list {
-    .container();
-  }
 
   .generate-navigation(3);
 
@@ -86,10 +83,20 @@
       padding-left: 310px;
       padding-right: 0;
       text-align: left;
+      .set-font(normal; 14px; 24px);
     }
 
     &__research-title {
+      margin: 0;
+      margin-bottom: 10px;
+      padding-right: 140px;
       .set-font(bold; 30px; 36px);
+      color: black;
+    }
+
+    &__research-text {
+      margin: 0;
+      margin-bottom: 10px;
     }
 
     &__research-link {
@@ -125,12 +132,16 @@
       padding-left: 370px;
       padding-right: 40px;
       background: @alt-bg-color;
+      .set-font(normal; 18px; 30px);
+    }
 
+    &__research-title {
+      margin-bottom: 20px;
+      .set-font(bold; 30px; 30px);
+    }
 
-      &__research-text,
-      &__research-link {
-        .set-font(18px; 30px);
-      }
+    &__research-text {
+      margin-bottom: 30px;
     }
   }
 }

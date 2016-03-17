@@ -14,11 +14,13 @@
   padding: 0 @common-padding-phone;
 
   @media (min-width: @tablet-width) {
-    padding: 0 @common-padding-tablet;
+    padding-left: @common-padding-tablet;
+    padding-right: @common-padding-tablet;
   }
 
   @media (min-width: @desktop-width) {
-    padding: 0 @common-padding-desktop;
+    padding-left: @common-padding-desktop;
+    padding-right: @common-padding-desktop;
   }
 }
 
@@ -66,6 +68,16 @@
 
 .set-font(bold; @font-size; @line-height) {
   font-weight: 700;
+}
+
+.bg-image-btn(@width; @height; @img) {
+  font-size: 0;
+  .size(@width; @height);
+  .add-bg-image(@img; center);
+
+  &:hover {
+    opacity: 0.3;
+  }
 }
 
 .reset-list() {

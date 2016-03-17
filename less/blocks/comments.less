@@ -1,4 +1,6 @@
 .comments {
+  .container();
+
   .add-bg-outline();
 
   &__item-list {
@@ -7,16 +9,18 @@
   }
 
   &__item {
-    flex: 1;
-  }
+    flex: 1 250px;
 
-  &__item--top {
-    flex: 0 100%;
-  }
+    display: flex;
+    flex-flow: column;
 
-  &__item {
-    padding: 0;
     margin: 10px;
-    min-width: 300px;
+    min-width: 250px;
+
+    &--top {
+      flex: 0 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
