@@ -1,0 +1,73 @@
+.set-range(@thumb-color: white,
+           @thumb-border-color: red,
+           @thumb-size: 10px,
+           @thumb-border-size: 1px,
+           @track-color: black,
+           @track-width: 2px) {
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  .range-thumb()
+  {
+    border: @thumb-border-size solid @thumb-border-color;
+    height: @thumb-size;
+    width: @thumb-size;
+    border-radius: 50%;
+    background: @thumb-color;
+    cursor: pointer;
+
+    &:hover {
+      background: @thumb-border-color;
+    }
+  }
+
+  .range-track() {
+    width: 100%;
+    height: @track-width;
+    cursor: pointer;
+    animate: 0.2s;
+    background: @track-color;
+    border: 0px solid @track-color;
+  }
+
+  &::-webkit-slider-thumb {
+    .range-thumb();
+
+    -webkit-appearance: none;
+    margin-top: ((@thumb-border-size - @thumb-size) / 2);
+  }
+
+  &::-webkit-slider-runnable-track {
+    .range-track();
+    margin-top: @thumb-size;
+    margin-bottom: @thumb-size;
+  }
+
+  &::-moz-range-thumb {
+    .range-thumb();
+  }
+
+  &::-moz-range-track {
+    .range-track();
+  }
+
+  &::-ms-thumb {
+    .range-thumb();
+  }
+
+  &::-ms-track {
+    .range-track();
+    background: transparent;
+    border-color: transparent;
+    border-width: @thumb-size;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background: @track-color;
+ }
+}
