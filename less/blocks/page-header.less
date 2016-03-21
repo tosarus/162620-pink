@@ -2,14 +2,19 @@
   position: relative;
   min-height: 237px;
 
-  .add-bg-image("../img/bg-back-mobile.jpg"; center top);
+  .add-bg-image("../img/bg-back-mobile.jpg"; center -7px);
   background-color: #1d2631;
 
   .add-bg-outline(nobg-all);
 
+  &__menu-container {
+    background: fade(#000, 30%);
+    .add-bg-outline(nobg-all);
+  }
+
   &__title {
-    margin: 0;
-    padding: 30px;
+    .container();
+    padding: 19px;
 
     .set-font(light; 24px; 29px);
     color: white;
@@ -17,18 +22,37 @@
 
   &--with-photo {
     min-height: 729px;
+  }
 
-    .add-bg-image("../img/iphone-hand-mobile.png"; left 172px);
-    .add-bg-image("../img/bg-back-mobile.jpg"; center -4px);
+  &--with-photo::after {
+    content: "";
+    position: absolute;
+    height: 286px;
+    width: @phone-width;
+    bottom: 271px;
+    left: 50%;
+    transform: translateX(-50%);
+    .add-bg-image("../img/iphone-hand-mobile.png"; left top);
   }
 
   &__apps-wrapper {
-    .absolute(bottom);
-    .container();
+    position: relative;
+    z-index: 5;
+  }
+
+  @media (max-width: (@tablet-width - 1)) {
+    &__apps-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   @media (min-width: @tablet-width) {
     min-height: 440px;
+    background-size: auto 100%;
+    background-position: center;
 
     &__title {
       padding: 75px;
@@ -36,20 +60,27 @@
     }
 
     &--with-photo {
-      background-position: 210px bottom, center top;
-      background-size: auto 500px, auto 100%;
+      padding-bottom: 80px;
+    }
+
+    &--with-photo::after {
+      height: 500px;
+      width: @tablet-content-width;
+      bottom: 47px;
+      background-size: auto 100%;
+      background-position: 170px top;
     }
 
     &--with-photo &__title {
-      padding: 93px 90px 2px;
-      width: 200px;
+      position: relative;
+      z-index: 5;
+      padding: 93px 370px 2px 50px;
 
       .set-font(light; 40px; 48px);
     }
 
     &__apps-wrapper {
-      position: static;
-      width: 300px;
+      .container();
     }
   }
 
@@ -65,22 +96,20 @@
     }
 
     &--with-photo {
-      min-height: 853px;
+      padding-bottom: 92px;
+    }
 
-      background-position: 475px bottom, center top;
-      background-size: auto 645px, auto 100%;
+    &--with-photo::after {
+      height: 591px;
+      width: @desktop-content-width;
+      bottom: 55px;
+      background-position: 371px top;
     }
 
     &--with-photo &__title {
-      padding: 120px 165px 28px;
-      width: 240px;
+      padding: 108px 640px 23px 0;
 
-      .set-font(light; 50px; 61px);
-    }
-
-    &__apps-wrapper {
-      position: static;
-      width: 300px;
+      .set-font(light; 50px; 60px);
     }
   }
 }

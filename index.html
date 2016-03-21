@@ -8,19 +8,20 @@
   </head>
   <body>
     <header class="page-header page-header--with-photo">
-      <nav class="main-menu">
-        <a class="main-menu__logo" href="index.html">Pink</a>
-        <span class="main-menu__toggle">Открыть меню</span>
-        <div class="main-menu__wrapper main-menu__wrapper--closed">
-          <span class="main-menu__close-btn">Закрыть меню</span>
-          <ul class="main-menu__item-list">
-            <li class="main-menu__item"><a>Главная</a></li>
-            <li class="main-menu__item"><a href="photo.html">Фотографии</a></li>
-            <li class="main-menu__item"><a href="form.html">Конкурс</a></li>
-            <li class="main-menu__item"><a href="http://htmlacademy.ru">HTML Academy</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div class="page-header__menu-container">
+        <nav class="main-menu">
+          <a class="main-menu__logo" href="index.html">Pink</a>
+          <div class="main-menu__wrapper main-menu__wrapper--closed">
+            <ul class="main-menu__item-list">
+              <li class="main-menu__item main-menu__item--active"><a>Главная</a></li>
+              <li class="main-menu__item"><a href="photo.html">Фотографии</a></li>
+              <li class="main-menu__item"><a href="form.html">Конкурс</a></li>
+              <li class="main-menu__item"><a href="http://htmlacademy.ru">HTML Academy</a></li>
+            </ul>
+          </div>
+          <a href="#" class="main-menu__toggle">Открыть меню</a>
+        </nav>
+      </div>
       <h1 class="page-header__title">
         Взгляните на жизнь иначе!
       </h1>
@@ -60,7 +61,7 @@
               Меняет мир вокруг
             </h3>
             <p class="advantages__item-text">
-              Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект
+              Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить&nbsp;эффект
             </p>
           </div>
           <div class="advantages__item">
@@ -74,44 +75,41 @@
         </div>
       </section>
       <section class="reviews">
-        <section class="reviews__research">
-          <h2 class="reviews__research-title">Эффект на 24 часа!</h2>
-          <p class="reviews__research-text">
-            Британские ученые провели исследования и&nbsp;доказали,
-            что&nbsp;положительный эффект от использования приложения
-            длится целые&nbsp;сутки!
-          </p>
-          <a class="reviews__research-link" href="#">Узнать больше об исследовании</a>
-        </section>
+        <div class="reviews__research">
+          <section class="research">
+            <h2 class="research__title">Эффект на&nbsp;24&nbsp;часа!</h2>
+            <p class="research__text">
+              Британские ученые провели исследования и&nbsp;доказали,
+              что&nbsp;положительный эффект от&nbsp;использования приложения
+              длится целые&nbsp;сутки!
+            </p>
+            <a class="research__link" href="#">Узнать больше об исследовании</a>
+          </section>
+        </div>
         <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-1" checked>
         <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-2">
         <input class="reviews__nav-switcher" type="radio" name="reviews" id="reviews-radio-3">
-        <div class="reviews__nav">
-          <label class="reviews__nav-btn" for="reviews-radio-1"></label>
-          <label class="reviews__nav-btn" for="reviews-radio-2"></label>
-          <label class="reviews__nav-btn" for="reviews-radio-3"></label>
-        </div>
         <div class="reviews__item-list">
           <blockquote class="reviews__item">
             <cite class="reviews__author-name">Николай Петров<span>25 лет, водитель трамвая</span></cite>
-            <p>
-              &laquo;Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи!
-              А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!&raquo;
+            <p class="reviews__text">
+              <span>&laquo;</span>Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи!
+              А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!<span>&raquo;</span>
             </p>
           </blockquote>
           <div class="reviews__paginator reviews__paginator--prev">&lt;</div>
           <div class="reviews__paginator reviews__paginator--next">&gt;</div>
+        </div>
+        <div class="reviews__nav">
+          <label class="reviews__nav-btn" for="reviews-radio-1"></label>
+          <label class="reviews__nav-btn" for="reviews-radio-2"></label>
+          <label class="reviews__nav-btn" for="reviews-radio-3"></label>
         </div>
       </section>
       <section class="prices">
         <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-1">
         <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-2" checked>
         <input class="prices__nav-switcher" type="radio" name="prices" id="price-radio-3">
-        <div class="prices__nav">
-          <label class="prices__nav-btn" for="price-radio-1"></label>
-          <label class="prices__nav-btn" for="price-radio-2"></label>
-          <label class="prices__nav-btn" for="price-radio-3"></label>
-        </div>
         <div class="prices__slider">
           <section class="price-plan price-plan--no-header">
             <ul class="price-plan__option-list">
@@ -154,38 +152,43 @@
             </ul>
           </section>
         </div>
+        <div class="prices__nav">
+          <label class="prices__nav-btn" for="price-radio-1"></label>
+          <label class="prices__nav-btn" for="price-radio-2"></label>
+          <label class="prices__nav-btn" for="price-radio-3"></label>
+        </div>
       </section>
       <section class="contacts">
         <h2 class="contacts__promo-title">
           Остались вопросы?
           Свяжитесь с нами!
         </h2>
-        <div class="contacts__line">
-          <h3 class="contacts__title">Звоните:</h3>
-          <span>+7 (812) 555-66-66</span>
-        </div>
-        <div class="contacts__line">
-          <h3 class="contacts__title">Пишите:</h3>
-          <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-        </div>
-        <div class="contacts__line">
-          <h3 class="contacts__title">Приезжайте в гости:</h3>
-          <span>ул. Большая Конюшенная, 19/8</span>
+        <div class="contacts__details">
+          <div class="contacts__line">
+            <h3 class="contacts__title">Звоните:</h3>
+            <span href="tel:123">+7 (812) 555-66-66</span>
+          </div>
+          <div class="contacts__line">
+            <h3 class="contacts__title">Пишите:</h3>
+            <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+          </div>
+          <div class="contacts__line">
+            <h3 class="contacts__title">Приезжайте в гости:</h3>
+            <span>ул.&nbsp;Большая Конюшенная,&nbsp;19/8</span>
+          </div>
         </div>
         <div class="contacts__map"></div>
       </section>
     </main>
     <footer class="page-footer page-footer--closed">
-      <div class="page-footer__logo">
-        <img src="http://placehold.it/150x40" alt="Pink">
-      </div>
+      <img class="page-footer__logo" src="../img/logo-pink-blue-mobile.svg" width="146" height="40" alt="Pink">
       <div class="social-links">
-        <a class="social-links__link social-links__link--tw" href="#">Tweeter</a>
-        <a class="social-links__link social-links__link--fb" href="#">Facebook</a>
-        <a class="social-links__link social-links__link--vm" href="#">Vimeo</a>
+        <a class="social-links__link social-links__link--twitter" href="#">Tweeter</a>
+        <a class="social-links__link social-links__link--facebook" href="#">Facebook</a>
+        <a class="social-links__link social-links__link--youtube" href="#">Vimeo</a>
       </div>
       <div class="page-footer__copyright">
-        Разработано <a class="page-footer__copyright-link" href="http://htmlacademy.ru">Html academy</a>
+        Разработано <a class="page-footer__copyright-logo" href="http://htmlacademy.ru">Html academy</a>
       </div>
     </footer>
     <script src="js/script.js"></script>

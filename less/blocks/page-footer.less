@@ -1,16 +1,29 @@
 .page-footer {
-  .add-bg-outline();
-
   display: flex;
+  justify-content: space-between;
   align-items: center;
   .container();
+  height: 290px;
 
-  & > * {
-    flex: 1;
+  &__logo {
+    .size(147px; 40px);
+  }
+
+  &__copyright {
+    .set-font(normal; 14px; 18px);
+  }
+
+  &__copyright-logo {
+    .display-ib(middle);
+    margin-left: 10px;
+    font-size: 0;
+    .bg-image-btn(28px; 35px; "../img/logo-htmlacademy.svg");
   }
 
   @media (max-width: (@tablet-width - 1)) {
     flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 66px;
 
     &--closed {
       display: none;
@@ -19,9 +32,33 @@
 
   @media (min-width: @tablet-width) {
     height: 127px;
+
+    &__logo {
+      padding-right: 13px;
+      padding-bottom: 15px;
+    }
+
+    &__copyright {
+      padding-top: 5px;
+      padding-left: 31px;
+    }
   }
 
   @media (min-width: @desktop-width) {
     height: 197px;
+
+    &__logo {
+      padding-right: 13px;
+    }
+
+    &__copyright {
+      padding-top: 4px;
+      padding-left: 7px;
+      .set-font(normal; 18px; 18px);
+    }
+
+    &__copyright-logo {
+      margin-left: 8px;
+    }
   }
 }

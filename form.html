@@ -8,19 +8,20 @@
   </head>
   <body>
     <header class="page-header">
-      <nav class="main-menu">
-        <a class="main-menu__logo" href="index.html">Pink</a>
-        <span class="main-menu__toggle">Открыть меню</span>
-        <div class="main-menu__wrapper main-menu__wrapper--closed">
-          <span class="main-menu__close-btn">Закрыть меню</span>
-          <ul class="main-menu__item-list">
-            <li class="main-menu__item"><a href="index.html">Главная</a></li>
-            <li class="main-menu__item"><a href="photo.html">Фотографии</a></li>
-            <li class="main-menu__item"><a>Конкурс</a></li>
-            <li class="main-menu__item"><a href="http://htmlacademy.ru">HTML Academy</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div class="page-header__menu-container">
+        <nav class="main-menu">
+          <a class="main-menu__logo" href="index.html">Pink</a>
+          <div class="main-menu__wrapper main-menu__wrapper--closed">
+            <ul class="main-menu__item-list">
+              <li class="main-menu__item"><a href="index.html">Главная</a></li>
+              <li class="main-menu__item"><a href="photo.html">Фотографии</a></li>
+              <li class="main-menu__item main-menu__item--active"><a>Конкурс</a></li>
+              <li class="main-menu__item"><a href="http://htmlacademy.ru">HTML Academy</a></li>
+            </ul>
+          </div>
+          <a href="#" class="main-menu__toggle">Открыть меню</a>
+        </nav>
+      </div>
       <h1 class="page-header__title">
         Конкурс на самое безбашеное путешествие с Пинк
       </h1>
@@ -106,16 +107,14 @@
       </form>
     </main>
     <footer class="page-footer">
-      <div class="page-footer__logo">
-        <img src="http://placehold.it/150x40" alt="Pink">
-      </div>
+      <img class="page-footer__logo" src="../img/logo-pink-blue-mobile.svg" width="146" height="40" alt="Pink">
       <div class="social-links">
-        <a class="social-links__link social-links__link--tw" href="#">Tweeter</a>
-        <a class="social-links__link social-links__link--fb" href="#">Facebook</a>
-        <a class="social-links__link social-links__link--vm" href="#">Vimeo</a>
+        <a class="social-links__link social-links__link--twitter" href="#">Tweeter</a>
+        <a class="social-links__link social-links__link--facebook" href="#">Facebook</a>
+        <a class="social-links__link social-links__link--youtube" href="#">Vimeo</a>
       </div>
       <div class="page-footer__copyright">
-        Разработано <a class="page-footer__copyright-link" href="http://htmlacademy.ru">Html academy</a>
+        Разработано <a class="page-footer__copyright-logo" href="http://htmlacademy.ru">Html academy</a>
       </div>
     </footer>
     <div class="popup popup--closed">

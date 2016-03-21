@@ -1,3 +1,28 @@
 .social-links {
   .add-bg-outline();
+  white-space: nowrap;
+  font-size: 0;
+
+  &__link {
+    .display-ib(top);
+    margin: 0 7px;
+    .size(46px; 46px);
+    border: 2px solid #e9ebec;
+    border-radius: 50%;
+
+    &--twitter {
+      .add-bg-image("../../img/icon-twitter.svg"; center);
+    }
+
+    &--facebook {
+      .add-bg-image("../../img/icon-facebook.svg"; center);
+    }
+
+    &--youtube {
+      .add-bg-image("../../img/icon-youtube.svg"; center);
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+  }
 }

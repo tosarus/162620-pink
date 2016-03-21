@@ -10,8 +10,8 @@
 
   &__header {
     margin: 0;
-    padding: 16px 0;
-    background-color: #283645;
+    padding: 16px 0 20px;
+    background-color: @main-color;
     color: white;
 
     &--hit {
@@ -21,10 +21,11 @@
       &::after {
         content: "ХИТ";
         position: absolute;
-        left: -20px;
-        top: 7px;
-        .size(80px; 25px);
-        background: #d22856;
+        left: -38px;
+        top: 12px;
+        line-height: 30px;
+        .size(120px; 30px);
+        background: @reddish-color;
         transform: rotate(-45deg);
       }
     }
@@ -33,7 +34,7 @@
   &__name  {
     margin: 0;
     padding: 0;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     .set-font(bold; 18px; 30px);
   }
 
@@ -49,18 +50,18 @@
   }
 
   &__option {
-    padding-left: 20px;
+    padding-left: 21px;
     line-height: 59px;
     border-bottom: 2px solid #e5e5e5;
     text-align: left;
 
     &--yes {
-      .add-bg-image("../img/icon-yes.svg"; 228px);
-      background-size: 31px 21px;
+      .add-bg-image("../img/icon-yes.svg"; 229px);
+      background-size: 30px 22px;
     }
 
     &--no {
-      .add-bg-image("../img/icon-no.svg"; 228px);
+      .add-bg-image("../img/icon-no.svg"; 230px 15px);
       background-size: 27px 26px;
     }
   }
@@ -73,10 +74,19 @@
   }
 
   @media (min-width: @tablet-width) {
-    width: 152px;
+    width: 153px;
 
     &__header {
-      padding: 9px 0;
+      padding: 12px 0 10px;
+    }
+
+    &__name {
+      .set-font(bold; 16px; 30px);
+      margin-bottom: -3px;
+    }
+
+    &__value {
+      .set-font(light; 18px; 30px);
     }
 
     &__option {
@@ -85,18 +95,10 @@
       background-position: center;
     }
 
-    &__name {
-      .set-font(bold; 16px; 30px);
-      margin-bottom: 0;
-    }
-
-    &__value {
-      .set-font(light; 18px; 30px);
-    }
-
     &--no-header &__option {
-      .set-font(14px, 45px);
-      padding-left: 15px;
+      height: 30px;
+      .set-font(14px, 30px);
+      padding: 7px 15px 8px;
       text-transform: none;
     }
   }
@@ -104,8 +106,21 @@
   @media (min-width: @desktop-width) {
     width: 232px;
 
+    &__header {
+      padding: 16px 0 20px;
+    }
+
+    &__name {
+      .set-font(bold; 18px; 30px);
+      margin-bottom: 2px;
+    }
+
+    &__value {
+      .set-font(light; 24px; 30px);
+    }
+
     &__option {
-      line-height: 59px;
+      height: 59px;
     }
 
     &__name  {
@@ -117,7 +132,9 @@
     }
 
     &--no-header &__option {
-      .set-font(18px, 59px);
+      height: 30px;
+      padding: 14px 19px 15px;
+      .set-font(18px, 30px);
     }
   }
 }

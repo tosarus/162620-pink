@@ -1,0 +1,39 @@
+.research {
+  .container();
+  margin: 0 auto;
+  padding-left: 309px;
+  .set-font(normal; 14px; 24px);
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    padding-right: 140px;
+    .set-font(bold; 30px; 36px);
+    color: black;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 11px;
+  }
+
+  &__link {
+    color: @reddish-color;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-left: 366px;
+    padding-top: 104px;
+    padding-bottom: 45px;
+    .set-font(normal; 18px; 30px);
+
+    &__title {
+      margin-bottom: 24px;
+      .set-font(bold; 30px; 30px);
+    }
+
+    &__text {
+      margin-bottom: 30px;
+    }
+  }
+}

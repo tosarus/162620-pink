@@ -1,35 +1,37 @@
 .main-menu {
   position: relative;
+  margin: 0;
+  padding: 0 @phone-padding;
+  min-width: @phone-content-width;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .container();
   min-height: 66px;
   height: 50px;  // fix issue in IE
 
-  background: fade(#000, 30%);
-
-  .add-bg-outline(nobg-all);
-
   &__logo {
     position: relative;
-    z-index: 10;
+    z-index: 20;
 
-    .bg-image-btn(74px; 22px; "../img/logo-pink-white-mobile.svg");
+    .bg-image-btn(74px; 23px; "../img/logo-pink-white-mobile.svg");
   }
 
   &__toggle {
+    position: relative;
+    z-index: 20;
+
     .bg-image-btn(51px; 24px; "../img/icon-menu-burger.svg");
 
-    &--closed {
-      display: none;
+    &--opened {
+      .bg-image-btn(51px; 24px; "../img/icon-menu-cross.svg");
     }
   }
 
   &__wrapper {
     .absolute(top);
+    z-index: 10;
     padding-top: 69px;
     background: @main-color;
   }
@@ -44,12 +46,13 @@
 
   &__item {
     margin: 0;
-    padding: 15px;
     border-top: 1px solid #485461;
     border-bottom: 1px solid black;
 
     a {
+      display: block;
       color: white;
+      padding: 15px;
       .set-font(bold; 18px; 32px);
       text-decoration: none;
       text-transform: uppercase;
@@ -58,26 +61,21 @@
         color: black;
       }
     }
-  }
 
-  &__close-btn {
-    position: absolute;
-    top: 0;
-    right: @common-padding-phone;
-
-    .bg-image-btn(24px; 69px; "../img/icon-menu-cross.svg");
+    &--active {
+      a {
+        color: fade(white, 50%);
+      }
+    }
   }
 
   @media (min-width: @tablet-width) {
+    padding: 0 @tablet-padding;
+    min-width: @tablet-content-width;
     min-height: 110px;
 
     &__wrapper {
       padding-top: 110px;
-    }
-
-    &__close-btn {
-      height: 110px;
-      right: @common-padding-tablet;
     }
   }
 
@@ -90,13 +88,17 @@
   }
 
   @media (min-width: @desktop-width) {
-    &__toggle,
-    &__close-btn {
+    margin: 0 auto;
+    padding: 0;
+    width: @desktop-content-width;
+
+    &__toggle {
       display: none;
     }
 
     &__wrapper {
       position: static;
+      //min-width: 622px;
       padding: 0;
       background: none;
     }
@@ -115,6 +117,7 @@
       }
 
       a {
+        padding: 14px 0 16px;
         text-transform: none;
         font-weight: normal;
       }
