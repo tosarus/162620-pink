@@ -45,7 +45,7 @@
 
   &__map {
     position: relative;
-    min-height: 239px;
+    height: 239px;
     overflow: hidden;
 
     .add-bg-image("../img/bg-map.png", center);
@@ -54,6 +54,7 @@
     &::before {
       content: "";
       .absolute(top; -26px);
+      z-index: 10;
       height: 98px;
       .add-bg-image("../img/bg-triangle-white-footer.svg", center top);
       background-size: auto 100%;
@@ -95,7 +96,7 @@
     }
 
     &__map {
-      min-height: 403px;
+      height: 403px;
 
       &::before {
         top: -1px;
@@ -129,7 +130,7 @@
     }
 
     &__map {
-      min-height: 506px;
+      height: 506px;
 
       &::before {
         height: 108px;
