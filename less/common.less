@@ -1,31 +1,27 @@
 @main-color: #283645;
 @main-bg-color: #ffffff;
 @alt-bg-color: #f2f2f2;
-@common-padding-phone: 20px;
-@common-padding-tablet: 40px;
-@common-padding-desktop: 130px;
+@reddish-color: #d22856;
+@greenish-color: #2aab6d;
+@form-border: #e5e5e5;
+
+@phone-padding: 20px;
+@tablet-padding: 20px;
 
 @phone-width: 320px;
-@tablet-width: 700px;
-@desktop-width: 1200px;
+@tablet-width: 660px;
+@desktop-width: 960px;
 
-html {
-  background-color: #cccccc;
-}
+@phone-content-width: 280px;
+@tablet-content-width: 620px;
+@desktop-content-width: 940px;
 
-body {
+@body-style: grow;
+
+.body-align() when(@body-style = fixed) {
   margin: 0 auto;
-
-  font-family: "Open Sans", Tahoma, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
-  background: @main-bg-color;
-  color: @main-color;
-
-  @media (min-width: @phone-width) {
-    width: @phone-width;
-  }
+  padding: 0;
+  width: @phone-width;
 
   @media (min-width: @tablet-width) {
     width: @tablet-width;
@@ -34,4 +30,28 @@ body {
   @media (min-width: @desktop-width) {
     width: @desktop-width;
   }
+}
+
+.body-align() when(@body-style = grow) {
+  margin: 0;
+  padding: 0;
+  min-width: @phone-width;
+
+  @media (min-width: @tablet-width) {
+    min-width: @tablet-width;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-width: @desktop-width;
+  }
+}
+
+body {
+  .body-align();
+
+  font-family: "Open Sans", Tahoma, sans-serif;
+  .set-font(normal; 14px; 24px);
+  text-align: center;
+  color: @main-color;
+  background: @main-bg-color;
 }

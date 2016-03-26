@@ -1,7 +1,8 @@
 .prices {
   position: relative;
   overflow: hidden;
-  min-height: 504px;
+  padding-top: 446px;
+  padding-bottom: 48px;
 
   background-color: @alt-bg-color;
   .add-bg-outline(nobg);
@@ -9,8 +10,9 @@
   .add-bg-image("../img/bg-triangle-white.svg", center top);
 
   &__slider {
-    display: block;
-    .container();
+    margin: 0;
+    padding: 0 @phone-padding;
+    min-width: @phone-content-width;
     white-space: nowrap;
     font-size: 0;
   }
@@ -19,8 +21,9 @@
 
   @media (max-width: (@tablet-width - 1)) {
     &__nav {
-      .absolute(bottom; 45px);
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &__slider {
@@ -43,8 +46,25 @@
   }
 
   @media (min-width: @tablet-width) {
-    padding-top: 110px;
-    padding-bottom: 70px;
+    padding-top: 109px;
+    padding-bottom: 68px;
     min-height: 0;
+
+    &__slider {
+      margin: 0 auto;
+      padding: 0 @tablet-padding;
+      width: @tablet-content-width;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 154px;
+    padding-bottom: 95px;
+    background-size: 100% auto;
+
+    &__slider {
+      padding: 0;
+      width: @desktop-content-width;
+    }
   }
 }
