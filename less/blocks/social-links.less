@@ -7,22 +7,31 @@
     .display-ib(top);
     margin: 0 7px;
     .size(46px; 46px);
-    border: 2px solid #e9ebec;
+    border: 2px solid fade(@main-color, 30%);
     border-radius: 50%;
 
     &--twitter {
-      .add-bg-image("../img/icon-twitter.svg"; center);
+      .add-bg-image("../img/sprites.svg#icon-twitter"; center);
+      background-size: 18px 14px;
     }
 
     &--facebook {
-      .add-bg-image("../img/icon-facebook.svg"; center);
+      .add-bg-image("../img/sprites.svg#icon-facebook"; center);
+      background-size: 9px 18px;
     }
 
     &--youtube {
-      .add-bg-image("../img/icon-youtube.svg"; center);
+      .add-bg-image("../img/sprites.svg#icon-youtube"; center);
+      background-size: 15px 13px;
     }
-  }
 
-  @media (min-width: @desktop-width) {
+    &:hover {
+      border-color: @main-color;
+    }
+
+    &:active {
+      border-color: fade(@main-color, 30%);
+      opacity: 0.3;
+    }
   }
 }

@@ -14,18 +14,41 @@
   &__logo {
     position: relative;
     z-index: 20;
+    font-size: 0;
 
-    .bg-image-btn(74px; 23px; "../img/logo-pink-white-mobile.svg");
+    svg {
+      left: -73px;
+      top: -3px;
+      .size(148px; 41px);
+      fill: white;
+    }
+
+    &:hover svg {
+      fill: @reddish-color;
+    }
+
+    &:active svg {
+      fill: white;
+      opacity: 0.3;
+    }
   }
 
   &__toggle {
     position: relative;
     z-index: 20;
 
-    .bg-image-btn(51px; 24px; "../img/icon-menu-burger.svg");
+    svg {
+      top: 3px;
+      .size(50px; 24px);
+      fill: white;
+    }
 
-    &--opened {
-      .bg-image-btn(51px; 24px; "../img/icon-menu-cross.svg");
+    &:hover svg {
+      fill: @reddish-color;
+    }
+
+    &:active svg {
+      opacity: 0.3;
     }
   }
 
@@ -73,6 +96,14 @@
     padding: 0 @tablet-padding;
     min-width: @tablet-content-width;
     min-height: 110px;
+
+    &__logo svg {
+      left: 0;
+    }
+
+    &__toggle {
+      top: 1px;
+    }
 
     &__wrapper {
       padding-top: 110px;

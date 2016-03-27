@@ -99,7 +99,9 @@
       position: absolute;
       top: 5px;
       left: 18px;
-      .bg-image-btn(14px; 13px; "../img/icon-heart.svg");
+      .size(14px; 12px);
+      .add-bg-image("../img/sprites.svg#icon-heart"; center);
+      background-size: 14px 12px;
     }
   }
 
@@ -136,7 +138,7 @@
 
     &__likes {
       padding-left: 27px;
-      padding-bottom: 22px;
+      padding-bottom: 21px;
 
       &::before {
         content: "";
@@ -149,7 +151,7 @@
 
     &__item:first-child &__likes {
       position: absolute;
-      top: 25px;
+      top: 26px;
       right: 59px;
 
       &::before {

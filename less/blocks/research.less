@@ -1,8 +1,28 @@
 .research {
-  .container();
+  position: relative;
+  box-sizing: border-box;
+  width: @tablet-content-width;
   margin: 0 auto;
   padding-left: 309px;
+  padding-top: 38px;
+  padding-bottom: 38px;
   .set-font(normal; 14px; 24px);
+  .add-bg-image("../img/sprites.svg#icon-timer"; left top);
+  background-size: 240px 277px;
+
+  &::before {
+    content: "24";
+    position: absolute;
+    .size(176px; 176px);
+    left: 18px;
+    top: 56px;
+    text-align: center;
+    vertical-align: middle;
+    .set-font(bold; 96px; 166px);
+    color: @reddish-color;
+    border: 13px solid @reddish-color;
+    border-radius: 50%;
+  }
 
   &__title {
     margin: 0;
@@ -24,8 +44,20 @@
   @media (min-width: @desktop-width) {
     padding-left: 366px;
     padding-top: 104px;
-    padding-bottom: 45px;
+    padding-bottom: 50px;
+    width: @desktop-content-width;
     .set-font(normal; 18px; 30px);
+
+    background-position: 1px 10px;
+    background-size: 298px 346px;
+
+  &::before {
+    .size(220px; 220px);
+    left: 23px;
+    top: 79px;
+    .set-font(bold; 120px; 206px);
+    border-width: 17px;
+  }
 
     &__title {
       margin-bottom: 24px;
