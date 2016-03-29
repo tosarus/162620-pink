@@ -1,6 +1,7 @@
 .photo-editor {
-  padding-top: 20px;
   .add-bg-outline();
+
+  padding-top: 20px;
 
   &__promo {
     .container();
@@ -23,6 +24,7 @@
   }
 
   &__image {
+    .size(280px; 374px);
     margin-bottom: 40px;
   }
 
@@ -67,9 +69,8 @@
   }
 
   &__range {
+    .reset();
     width: 240px;
-    margin:0;
-    padding: 0;
 
     .set-range(@thumb-size: 13px;
                @thumb-color: @alt-bg-color;
@@ -152,8 +153,7 @@
       padding-top: 17px;
       margin-bottom: 0;
       margin-right: 10px;
-      width: 300px;
-      height: 400px;
+      .size(300px; 400px);
     }
 
     &__form {

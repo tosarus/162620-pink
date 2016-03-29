@@ -1,17 +1,17 @@
 .prices {
+  .add-bg-outline(nobg);
+
   position: relative;
   overflow: hidden;
   padding-top: 446px;
   padding-bottom: 48px;
 
   background-color: @alt-bg-color;
-  .add-bg-outline(nobg);
-
   .add-bg-image("../img/bg-triangle-white.svg", center top);
 
   &__slider {
     margin: 0;
-    padding: 0 @phone-padding;
+    padding: 0 20px;
     min-width: @phone-content-width;
     white-space: nowrap;
     font-size: 0;
@@ -58,7 +58,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    padding-top: 154px;
+    padding-top: 152px;
     padding-bottom: 95px;
     background-size: 100% auto;
 

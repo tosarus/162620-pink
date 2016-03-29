@@ -1,12 +1,12 @@
 .price-plan {
+  .add-bg-outline(nobg-all);
+
   .display-ib(bottom);
   width: 276px;
   text-transform: uppercase;
   background: white;
   border: 1px solid #e5e5e5;
   border-bottom: none;
-
-  .add-bg-outline(nobg-all);
 
   &__header {
     margin: 0;
@@ -32,16 +32,14 @@
   }
 
   &__name  {
-    margin: 0;
-    padding: 0;
+    .reset();
     margin-bottom: 2px;
     .set-font(bold; 18px; 30px);
   }
 
   &__value {
     display: block;
-    margin: 0;
-    padding: 0;
+    .reset();
     .set-font(light; 24px; 30px);
   }
 

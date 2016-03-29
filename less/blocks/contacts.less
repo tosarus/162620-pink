@@ -1,8 +1,8 @@
 .contacts {
+  .add-bg-outline();
+
   position: relative;
   padding-top: 42px;
-
-  .add-bg-outline();
 
   &__promo-title {
     .container();
@@ -36,10 +36,14 @@
       text-decoration: underline;
       color: @main-color;
     }
+
+    a:active {
+      opacity: 0.3;
+    }
   }
 
   &__title {
-    margin: 0;
+    .reset();
     .set-font(bold; 18px; 25px);
   }
 
@@ -121,6 +125,10 @@
       order: 3;
     }
 
+    &__line:nth-child(2) &__title {
+      padding-left: 4px;
+    }
+
     &__line:nth-child(3) {
       order: 2;
     }
@@ -134,7 +142,6 @@
 
       &::before {
         height: 108px;
-        top: -1px;
       }
     }
   }

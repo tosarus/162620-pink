@@ -43,8 +43,7 @@
   }
 
   &__author-name {
-    margin: 0;
-    padding: 0;
+    .reset();
     .set-font(bold; 18px; 30px);
     color: black;
     font-style: normal;
@@ -52,6 +51,7 @@
 
   @media (max-width: (@tablet-width - 1)) {
     padding-bottom: 8px;
+
     &__research,
     &__author-name span {
       display: none;
@@ -93,10 +93,6 @@
       padding-top: 0;
       padding-bottom: 64px;
       background: @alt-bg-color;
-    }
-
-    &__item-list {
-      padding-bottom: 34px;
     }
 
     &__paginator {

@@ -1,7 +1,7 @@
 .main-menu {
   position: relative;
   margin: 0;
-  padding: 0 @phone-padding;
+  padding: 0 20px;
   min-width: @phone-content-width;
 
   display: flex;
@@ -119,8 +119,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    margin: 0 auto;
-    padding: 0;
+    .reset(center);
     width: @desktop-content-width;
 
     &__toggle {
@@ -129,7 +128,6 @@
 
     &__wrapper {
       position: static;
-      //min-width: 622px;
       padding: 0;
       background: none;
     }
