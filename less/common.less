@@ -55,3 +55,27 @@ body {
   color: @main-color;
   background: @main-bg-color;
 }
+
+.icon-hidden      { display: none; }
+.icon-tablet      { display: none; }
+.icon-desktop     { display: none; }
+.icon-tablet-only { display: none; }
+.icon-mobile-tablet {display: inline; }
+
+@media (min-width: @tablet-width) {
+  .icon-tablet      { display: inline; }
+  .icon-tablet-only { display: inline; }
+}
+
+@media (min-width: @desktop-width) {
+  .icon-desktop { display: inline; }
+  .icon-tablet-only { display: none; }
+  .icon-mobile-tablet { display: none; }
+}
+
+svg,
+svg use {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}

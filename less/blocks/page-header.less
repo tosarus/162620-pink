@@ -1,15 +1,18 @@
 .page-header {
-  position: relative;
+  .add-bg-outline(nobg-all);
+
   min-height: 237px;
 
   .add-bg-image("../img/bg-back-mobile.jpg"; center -3px);
+  background-size: 700px auto;
   background-color: #1d2631;
 
-  .add-bg-outline(nobg-all);
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("../img/bg-back-mobile@2x.jpg");
+  }
 
   &__menu-container {
-    background: fade(#000, 30%);
-    .add-bg-outline(nobg-all);
+    background: fade(black, 30%);
   }
 
   &__title {
@@ -19,26 +22,18 @@
 
     .set-font(light; 24px; 29px);
     color: white;
+
+    &--fancy {
+      padding-top: 19px;
+      padding-bottom: 29px;
+    }
   }
 
-  &--with-photo {
-    min-height: 729px;
-    background-position: center -7px;
-  }
-
-  &--with-photo &__title {
-    padding-top: 19px;
-  }
-
-  &--with-photo::after {
-    content: "";
-    position: absolute;
-    height: 286px;
-    width: @phone-width;
-    bottom: 271px;
-    left: 50%;
-    transform: translateX(-50%);
-    .add-bg-image("../img/iphone-hand-mobile.png"; left top);
+  &__photo {
+    display: block;
+    .reset(center);
+    padding-right: 62px;
+    .size(258px; 286px);
   }
 
   &__apps-wrapper {
@@ -48,76 +43,83 @@
 
   @media (max-width: (@tablet-width - 1)) {
     &__apps-wrapper {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+     background-color: #1d2631;
+   }
   }
 
   @media (min-width: @tablet-width) {
+    position: relative;
+    overflow: hidden;
     min-height: 440px;
-    background-size: auto 100%;
-    background-position: center;
+
+    background-image: url("../img/bg-back-tablet@1x.jpg");
+    background-position: center top;
+    background-size: 1200px auto;
+
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image: url("../img/bg-back-tablet@2x.jpg");
+    }
 
     &__title {
       padding-top: 70px;
       width: 520px;
       .set-font(light; 50px; 60px);
+
+      &--fancy {
+        position: relative;
+        z-index: 5;
+        padding: 93px 320px 2px 0;
+        .set-font(light; 40px; 48px);
+      }
     }
 
-    &--with-photo {
-      padding-bottom: 80px;
-    }
-
-    &--with-photo::after {
-      height: 500px;
-      width: @tablet-content-width;
-      bottom: 47px;
-      background-size: auto 100%;
-      background-position: 170px top;
-    }
-
-    &--with-photo &__title {
-      position: relative;
-      z-index: 5;
-      padding: 93px 320px 2px 0;
-
-      .set-font(light; 40px; 48px);
+    &__photo {
+      position: absolute;
+      .reset();
+      .size(700px; 545px);
+      bottom: 0;
+      left: 50%;
+      transform: translate(-350px);
     }
 
     &__apps-wrapper {
-      .container();
+      margin: 0 auto;
+      width: @tablet-content-width;
+      padding-bottom: 80px;
     }
   }
 
   @media (min-width: @desktop-width) {
     min-height: 394px;
 
+    background-image: url("../img/bg-back-desktop.jpg");
+    background-size: 2560px auto;
+
     &__title {
       padding-top: 64px;
+      width: 800px;
 
-      &:not(&--narrow) {
-        width: 800px;
+      &--narrow {
+        width: 520px;
+      }
+
+      &--fancy {
+        padding: 108px 640px 23px 0;
+        width: @desktop-content-width;
+
+        .set-font(light; 50px; 60px);
       }
     }
 
-    &--with-photo {
+    &__photo {
+      .size(1050px; 645px);
+      bottom: -1px;
+      transform: translate(-454px);
+    }
+
+    &__apps-wrapper {
       padding-bottom: 92px;
-    }
-
-    &--with-photo::after {
-      height: 591px;
       width: @desktop-content-width;
-      bottom: 55px;
-      background-position: 371px top;
-    }
-
-    &--with-photo &__title {
-      padding: 108px 640px 23px 0;
-      width: @desktop-content-width;
-
-      .set-font(light; 50px; 60px);
     }
   }
 }

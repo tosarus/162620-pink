@@ -1,6 +1,7 @@
 .photo-editor {
-  padding-top: 20px;
   .add-bg-outline();
+
+  padding-top: 20px;
 
   &__promo {
     .container();
@@ -23,6 +24,7 @@
   }
 
   &__image {
+    .size(280px; 374px);
     margin-bottom: 40px;
   }
 
@@ -60,23 +62,15 @@
       background: #dddfe0;
     }
 
-    &--crop {
-      .add-bg-image("../img/icon-editor-crop.svg", center top);
-    }
-
-    &--fill {
-      .add-bg-image("../img/icon-editor-fill.svg", center 2px);
-    }
-
-    &--contrast {
-      .add-bg-image("../img/icon-editor-contrast.svg", 8px 9px);
+    svg {
+      .size(48px; 48px);
+      fill: @reddish-color;
     }
   }
 
   &__range {
+    .reset();
     width: 240px;
-    margin:0;
-    padding: 0;
 
     .set-range(@thumb-size: 13px;
                @thumb-color: @alt-bg-color;
@@ -87,16 +81,20 @@
   }
 
   @media (max-width: (@tablet-width - 1)) {
-    &__radio:nth-of-type(1):checked ~ &__label:nth-of-type(1) {
-      background-color: @reddish-color;
+    &__label svg {
+      fill: @main-color;
+      opacity: 0.3;
     }
 
-    &__radio:nth-of-type(2):checked ~ &__label:nth-of-type(2) {
-      background-color: @reddish-color;
+    &__label:hover svg {
+      opacity: 0.5;
     }
 
-    &__radio:nth-of-type(3):checked ~ &__label:nth-of-type(3) {
-      background-color: @reddish-color;
+    &__radio:nth-of-type(1):checked ~ &__label:nth-of-type(1) svg,
+    &__radio:nth-of-type(2):checked ~ &__label:nth-of-type(2) svg,
+    &__radio:nth-of-type(3):checked ~ &__label:nth-of-type(3) svg {
+      fill: @reddish-color;
+      opacity: 1;
     }
 
     &__range {
@@ -104,14 +102,8 @@
       order: 1;
     }
 
-    &__radio:nth-of-type(1):checked ~ &__range:nth-of-type(4) {
-      display: block;
-    }
-
-    &__radio:nth-of-type(2):checked ~ &__range:nth-of-type(5) {
-      display: block;
-    }
-
+    &__radio:nth-of-type(1):checked ~ &__range:nth-of-type(4),
+    &__radio:nth-of-type(2):checked ~ &__range:nth-of-type(5),
     &__radio:nth-of-type(3):checked ~ &__range:nth-of-type(6) {
       display: block;
     }
@@ -161,8 +153,7 @@
       padding-top: 17px;
       margin-bottom: 0;
       margin-right: 10px;
-      width: 300px;
-      height: 400px;
+      .size(300px; 400px);
     }
 
     &__form {
@@ -179,9 +170,9 @@
 
     &__label {
       position: relative;
-      .size(22px; 22px);
-      margin: 26px 0 0;
-      padding: 0 3px 25px;
+      .size(24px; 24px);
+      margin: 25px 0 0;
+      padding: 0 2px 24px;
 
       &::after {
         left: 0;
@@ -189,17 +180,23 @@
         width: 275px;
       }
 
-      &--crop {
-        background-size: 22px 22px;
+      svg {
+        .size(24px; 24px);
       }
-      &--fill {
-        background-size: 25px 23px;
+
+      &--fill svg {
+        top: 1px;
+        left: 1px;
+      }
+
+      &--contrast svg {
+        top: 1px;
+        left: 2px;
       }
 
       &--contrast {
+        padding-bottom: 23px;
         margin-top: 21px;
-        background-size: 16px 16px;
-        background-position: 8px 5px;
 
         &::after {
           bottom: -2px;
@@ -257,26 +254,37 @@
     }
 
     &__label {
-      .size(48px; 44px);
+      .size(48px; 48px);
       margin: 14px 0 0;
-      padding: 0 0 15px;
+      padding: 0 0 11px;
       background-size: auto;
 
       &::after {
         width: 410px;
       }
 
-      &--crop {
-        background-position: -2px -1px;
+      svg {
+        .size(48px; 48px);
       }
 
-      &--fill {
-        background-position: 0 1px;
+      &--crop svg {
+        top: -1px;
+        left: -2px;
       }
+
+      &--fill svg {
+        top: -1px;
+        left: 0;
+      }
+
 
       &--contrast {
         margin-top: 9px;
-        background-position: 6px 10px;
+
+        svg {
+          top: 1px;
+          left: -2px;
+        }
       }
     }
 
