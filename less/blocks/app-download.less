@@ -27,22 +27,27 @@
 
   &__platform {
     .display-ib(top);
-    .size(47px, 56px);
+    .size(47px; 56px);
     margin: 0 16px;
 
-    &--apple {
-      .add-bg-image("../img/sprites.svg#logo-apple"; -1px);
-      background-size: 47px 56px;
+    &--apple svg {
+      top: 0;
+      left: -1px;
+      .size(47px; 56px);
+      fill: white;
     }
 
-    &--google {
-      .add-bg-image("../img/sprites.svg#logo-android"; 1px 8px);
-      background-size: 43px 47px;
+    &--google svg {
+      top: 8px;
+      left: -1px;
+      .size(43px; 47px);
+      fill: #a4c639;
     }
 
-    &--microsoft {
-      .add-bg-image("../img/sprites.svg#logo-microsoft"; center 12px);
-      background-size: 44px 41px;
+    &--microsoft svg {
+      top: 12px;
+      left: 2px;
+      .size(44px; 42px);
     }
   }
 

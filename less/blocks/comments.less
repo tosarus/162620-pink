@@ -97,14 +97,12 @@
     color: @reddish-color;
     text-transform: uppercase;
 
-    &::before {
-      content: "";
+    svg {
       position: absolute;
       top: 5px;
       left: 18px;
       .size(14px; 12px);
-      .add-bg-image("../img/sprites.svg#icon-heart"; center);
-      background-size: 14px 12px;
+      fill: @reddish-color;
     }
   }
 
@@ -143,9 +141,7 @@
       padding-left: 27px;
       padding-bottom: 21px;
 
-      &::before {
-        content: "";
-        position: absolute;
+      svg {
         top: 4px;
         left: auto;
         right: 31px;
@@ -157,7 +153,7 @@
       top: 26px;
       right: 59px;
 
-      &::before {
+      svg {
         right: -31px;
       }
     }

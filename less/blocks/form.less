@@ -36,6 +36,7 @@
     padding: 15px 20px 14px;
 
     width: 100%;
+    height: 63px;
     margin-bottom: 8px;
     border: 2px solid @form-border;
     .set-font(normal; 18px; 30px);
@@ -116,12 +117,12 @@
   }
 
   &__checkbox:checked + &__label::before {
-    .add-bg-image("../img/sprites.svg#icon-check"; center);
+    .add-bg-image("../img/icon-check.svg"; center);
     background-size: 22px 16px;
   }
 
   &__radio:checked + &__label::before {
-    .add-bg-image("../img/sprites.svg#icon-marker"; center);
+    .add-bg-image("../img/icon-map-marker.svg"; center);
     background-size: 35px 35px;
   }
 
@@ -160,7 +161,7 @@
   &__note {
     display: block;
     padding: 0;
-    margin: 0 auto 10px;
+    margin: 0 auto 15px;
     text-align: center;
     .set-font(normal; 14px; 30px);
     text-transform: uppercase;
@@ -198,6 +199,10 @@
     }
 
     &__input-set--fancy &__label--alternate {
+      display: none;
+    }
+
+    &__input-wrapper svg {
       display: none;
     }
 
@@ -264,6 +269,7 @@
     }
 
     &__input-set:nth-of-type(1) &__flex {
+      height: 250px;
       min-height: 294px;
       display: flex;
       flex-flow: row wrap;
@@ -287,7 +293,7 @@
     }
 
     &__input-set:nth-of-type(1) &__input {
-      flex: 1 500px;
+      flex: 1 475px;
       margin: 0;
     }
 
@@ -331,14 +337,25 @@
       margin-top: 15px;
     }
 
-    &__input[type=tel] {
-      .add-bg-image("../img/sprites.svg#icon-phone"; 456px);
-      background-size: 20px 19px;
+    &__input-wrapper {
+      position: relative;
+      display: block;
+
+      svg {
+        position: absolute;
+        right: 20px;
+        fill: @reddish-color;
+      }
     }
 
-    &__input[type=email] {
-      .add-bg-image("../img/sprites.svg#icon-mail"; 457px);
-      background-size: 18px 13px;
+    &__input[type=tel] + svg {
+      top: 37px;
+      .size(24px; 19px);
+    }
+
+    &__input[type=email] + svg {
+      top: 40px;
+      .size(24px; 13px);
     }
 
     &__input-set--fancy &__label {
@@ -384,7 +401,7 @@
     }
 
     &__input-set:nth-of-type(1) &__input {
-      flex: 1 320px;
+      flex: 1 310px;
       margin: 0;
     }
 

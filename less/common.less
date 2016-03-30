@@ -16,8 +16,25 @@
 @tablet-content-width: 620px;
 @desktop-content-width: 940px;
 
-body {
-  .reset();
+@body-style: grow;
+
+.body-align() when(@body-style = fixed) {
+  margin: 0 auto;
+  padding: 0;
+  width: @phone-width;
+
+  @media (min-width: @tablet-width) {
+    width: @tablet-width;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: @desktop-width;
+  }
+}
+
+.body-align() when(@body-style = grow) {
+  margin: 0;
+  padding: 0;
   min-width: @phone-width;
 
   @media (min-width: @tablet-width) {
@@ -27,6 +44,10 @@ body {
   @media (min-width: @desktop-width) {
     min-width: @desktop-width;
   }
+}
+
+body {
+  .body-align();
 
   font-family: "Open Sans", Tahoma, sans-serif;
   .set-font(normal; 14px; 24px);
@@ -54,6 +75,7 @@ body {
 
 svg,
 svg use {
+  margin: 0;
+  padding: 0;
   position: relative;
-  .reset();
 }

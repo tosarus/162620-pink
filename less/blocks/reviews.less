@@ -13,6 +13,7 @@
       align-items: center;
     }
 
+    &__item svg,
     &__paginator {
       display: none;
     }
@@ -100,16 +101,17 @@
       .size(22px; 92px);
       opacity: 0.3;
 
+      svg {
+        .size(22px; 92px);
+        fill: @main-color;
+      }
+
       &--prev {
         order: -1;
-        .add-bg-image("../img/sprites.svg#icon-arrow-left"; center bottom);
-        background-size: 22px 41px;
       }
 
       &--next {
         order: 1;
-        .add-bg-image("../img/sprites.svg#icon-arrow-right"; center bottom);
-        background-size: 22px 41px;
       }
 
       &:hover {
@@ -127,15 +129,12 @@
       min-height: 201px;
       width: 700px;
 
-      &::before {
-        content: "";
+      svg {
         position: absolute;
         .size(79px; 63px);
         top: 30px;
         left: 50%;
         transform: translateX(-50%);
-        .add-bg-image("../img/sprites.svg#icon-quotes"; center);
-        background-size: 79px 63px;
       }
     }
 

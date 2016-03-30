@@ -57,11 +57,11 @@
 
     &::before {
       content: "";
-      .absolute(top; -26px);
+      .absolute(top; -51px);
       z-index: 10;
-      height: 98px;
+      height: 123px;
       .add-bg-image("../img/bg-triangle-white-footer.svg", center top);
-      background-size: auto 100%;
+      background-size: 1200px 123px;
     }
   }
 
@@ -103,7 +103,7 @@
       height: 403px;
 
       &::before {
-        top: -1px;
+        top: -26px;
       }
     }
   }
@@ -115,6 +115,10 @@
       width: 480px;
       margin-bottom: 56px;
       .set-font(light; 50px; 60px);
+    }
+
+    &__line {
+      margin: 0;
     }
 
     &__line:nth-child(1) {
@@ -138,10 +142,12 @@
     }
 
     &__map {
-      height: 506px;
+      height: 523px;
 
       &::before {
-        height: 108px;
+        top: -1px;
+        height: 125px;
+        background-size: 1460px 125px;
       }
     }
   }

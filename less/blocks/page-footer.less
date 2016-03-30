@@ -39,12 +39,20 @@
       right: 2px;
       fill: @reddish-color;
     }
+
+    &:hover svg {
+      fill: @main-color;
+    }
+
+    &:active svg {
+      opacity: 0.3;
+    }
   }
 
   @media (max-width: (@tablet-width - 1)) {
     flex-direction: column;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 35px;
+    padding-bottom: 45px;
 
     &--closed {
       display: none;
@@ -77,13 +85,13 @@
     height: 197px;
 
     &__logo {
-      padding-right: 13px;
+      padding-right: 14px;
     }
 
     &__copyright {
       width: 155px;
       padding-top: 2px;
-      padding-left: 8px;
+      padding-left: 0;
       .set-font(normal; 18px; 18px);
     }
 

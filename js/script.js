@@ -67,7 +67,7 @@ if (document.querySelector("#map")) {
           balloonContent: "ул. Большая Конюшенная, 19/8"
         }, {
             iconLayout: "default#image",
-            iconImageHref: "img/sprites.svg#icon-marker",
+            iconImageHref: "img/icon-map-marker.svg",
             iconImageSize: [36, 36],
             iconImageOffset: [-18, -18]
         });

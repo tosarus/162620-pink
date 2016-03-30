@@ -1,7 +1,6 @@
 .page-header {
   .add-bg-outline(nobg-all);
 
-  position: relative;
   min-height: 237px;
 
   .add-bg-image("../img/bg-back-mobile.jpg"; center -3px);
@@ -49,6 +48,8 @@
   }
 
   @media (min-width: @tablet-width) {
+    position: relative;
+    overflow: hidden;
     min-height: 440px;
 
     background-image: url("../img/bg-back-tablet@1x.jpg");
@@ -74,6 +75,7 @@
 
     &__photo {
       position: absolute;
+      .reset();
       .size(700px; 545px);
       bottom: 0;
       left: 50%;
