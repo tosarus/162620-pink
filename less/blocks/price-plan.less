@@ -21,10 +21,10 @@
       &::after {
         content: "ХИТ";
         position: absolute;
-        left: -38px;
+        left: -36px;
         top: 12px;
-        line-height: 30px;
-        .size(120px; 30px);
+        .set-font(normal; 14px; 28px);
+        .size(118px; 29px);
         background: @reddish-color;
         transform: rotate(-45deg);
       }
@@ -76,6 +76,11 @@
 
     &__header {
       padding: 12px 0 10px;
+
+      &--hit::after {
+        left: -38px;
+        top: 5px;
+      }
     }
 
     &__name {
@@ -106,6 +111,11 @@
 
     &__header {
       padding: 16px 0 20px;
+
+      &--hit::after {
+        left: -34px;
+        top: 13px;
+      }
     }
 
     &__name {
