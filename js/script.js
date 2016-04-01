@@ -65,13 +65,9 @@ function initMap() {
     disableDefaultUI: true
   });
 
-  var myMarker = new google.maps.Circle({
-    center: { lat: 59.9363, lng: 30.3211 },
+  var myMarker = new google.maps.Marker({
+    position: { lat: 59.9363, lng: 30.3211 },
     map: map,
-    strokeColor: "#fff",
-    strokeWeight: 10,
-    fillColor: "#D22856",
-    fillOpacity: 1,
-    radius: 16
+    icon: "img/icon-map-marker.png"
   });
 }

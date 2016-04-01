@@ -150,14 +150,30 @@
       }
     }
 
+    &__item:first-child {
+      flex-flow: row-reverse wrap;
+      justify-content: space-between;
+    }
+
+    &__item:first-child &__author {
+      padding-top: 24px;
+    }
+
     &__item:first-child &__likes {
-      position: absolute;
-      top: 26px;
+      order: -1;
+      .reset();
+      margin-top: 25px;
       right: 59px;
 
       svg {
+        top: 5px;
         right: -31px;
       }
+    }
+
+    &__item:first-child &__text {
+      margin-top: -16px;
+      flex-grow: 1;
     }
 
     &__photo {
@@ -165,7 +181,7 @@
     }
 
     &__author {
-      padding: 24px 27px 0;
+      padding: 17px 27px 0;
     }
 
     &__text {
