@@ -2,6 +2,7 @@
   .add-bg-outline();
 
   position: fixed;
+  z-index: 110;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -16,17 +17,29 @@
     display: none;
   }
 
+  div&--quad {
+    z-index: 105;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(0, 0);
+
+    background: fade(black, 30%);
+  }
+
   &__title {
-    margin: 0 auto 26px;
     padding: 0;
+    margin: 0 auto 26px;
+    width: 240px;
     .set-font(bold; 18px; 24px);
     color: black;
   }
 
   &__text {
-    margin: 0;
-    padding: 0 20px;
-    margin-bottom: 31px;
+    padding: 0;
+    margin: 0 auto 31px;
+    width: 280px;
   }
 
   &__form {
@@ -34,7 +47,6 @@
     padding-top: 6px;
     min-height: 115px;
     background: @main-bg-color;
-
 
     &--alternate {
       padding-top: 48px;
@@ -52,5 +64,56 @@
     color: @main-bg-color;
     border: none;
     border-radius: 2px;
+
+    &:hover {
+      background-color: #1c9b5e;
+    }
+
+    &:active {
+      background-color: #1c9b5e;
+      color: fade(white, 30%);
+    }
+
+    &:disabled {
+      background-color: #e5e5e5;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 460px;
+    padding-top: 35px;
+
+    &__title {
+      margin-bottom: 22px;
+      .set-font(bold; 30px; 40px);
+    }
+
+    &__text {
+      width: 320px;
+      margin-bottom: 34px;
+      .set-font(normal; 18px; 24px);
+    }
+
+    &__button {
+      width: 300px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &--ok {
+      width: 760px;
+    }
+
+    &--ok &__title {
+      width: 400px;
+    }
+
+    &--ok &__text {
+      width: 380px;
+    }
+
+    &--ok &__button {
+      width: 460px;
+    }
   }
 }

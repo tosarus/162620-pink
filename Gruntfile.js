@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       build: {
         files: [{
           expand: true,
-          src: ["fonts/*.{woff,woff2}", "img/*.{png,jpg}", "js/*.js"],
+          src: ["fonts/*.{woff,woff2}", "img/*.{png,jpg}"],
           dest: "build"
         }, {
           expand: true,
@@ -25,6 +25,13 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: ["*.html"],
+          dest: "build"
+        }]
+      },
+      scripts: {
+        files: [{
+          expand: true,
+          src: ["js/*.js"],
           dest: "build"
         }]
       }
@@ -83,7 +90,7 @@ module.exports = function(grunt) {
     browserSync: {
       server: {
         bsFiles: {
-          src: ["build/*.html", "build/css/*.css"]
+          src: ["build/*.html", "build/css/*.css", "build/js/*.js"]
         },
         options: {
           server: "./build",
@@ -99,6 +106,11 @@ module.exports = function(grunt) {
       html: {
         files: ["*.html"],
         tasks: ["copy:html"],
+        options: { spawn: false }
+      },
+      scripts: {
+        files: ["js/*.js"],
+        tasks: ["copy:scripts"],
         options: { spawn: false }
       },
       style: {

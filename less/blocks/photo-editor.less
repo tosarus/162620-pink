@@ -15,10 +15,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 41px;
     max-width: 940px;
-    margin: 0 auto;
 
     background: @alt-bg-color;
   }
@@ -125,11 +125,30 @@
     &[type="submit"] {
       color: @reddish-color;
       border-color: @reddish-color;
+
+      &:hover {
+        color: white;
+        background: @reddish-color;
+      }
+
+      &:active {
+        color: fade(white, 30%);
+      }
     }
 
     &[type="reset"] {
-      color: #dddfe0;
-      border-color: #dddfe0;
+      color: @main-color;
+      border-color: @main-color;
+      opacity: 0.1;
+
+      &:hover {
+        opacity: 0.3;
+      }
+
+      &:active {
+        background: @main-color;
+        color: fade(white, 30%);
+      }
     }
   }
 
