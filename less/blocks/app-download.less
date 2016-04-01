@@ -18,6 +18,15 @@
 
     border: 3px solid white;
     border-radius: 30px;
+
+    &:hover {
+      background: white;
+      color: @reddish-color;
+    }
+
+    &:active {
+      color: fade(@reddish-color, 30%);
+    }
   }
 
   &__platform-list {

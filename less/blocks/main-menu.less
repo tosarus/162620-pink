@@ -81,13 +81,11 @@
       text-transform: uppercase;
 
       &:hover {
-        color: black;
+        color: @reddish-color;
       }
-    }
 
-    &--active {
-      a {
-        color: fade(white, 50%);
+      &:active {
+        opacity: 0.3;
       }
     }
   }
@@ -150,6 +148,22 @@
         padding: 14px 0 16px;
         text-transform: none;
         font-weight: normal;
+
+        &:hover {
+          position: relative;
+          color: white;
+
+          &::after {
+            content: "";
+            .absolute(bottom; 10px);
+            height: 2px;
+            background: white;
+          }
+        }
+
+        &:active::after {
+          content: none;
+        }
       }
     }
   }

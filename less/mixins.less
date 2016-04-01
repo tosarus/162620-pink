@@ -91,6 +91,14 @@
     background: fade(@main-color, 30%);
     border: 3px solid transparent;
     border-radius: 50%;
+
+    &:hover {
+      background: fade(@main-color, 60%);
+    }
+
+    &:active {
+      background: fade(@main-color, 10%);
+    }
   }
 
   .generate-nav-btn(@counter) when(@counter > 0) {
