@@ -68,7 +68,7 @@
   }
 
   &__author {
-    padding: 18px 17px 0;
+    padding: 11px 17px 0;
     font-style: normal;
     .set-font(bold; 14px; 24px);
 
@@ -76,6 +76,10 @@
       .set-font(light; 12px; 24px);
       text-transform: uppercase;
     }
+  }
+
+  &__item:first-child &__author {
+    padding-top: 18px;
   }
 
   &__text {
@@ -155,6 +159,10 @@
       justify-content: space-between;
     }
 
+    &__author {
+      padding: 17px 27px 0;
+    }
+
     &__item:first-child &__author {
       padding-top: 24px;
     }
@@ -171,6 +179,10 @@
       }
     }
 
+    &__text {
+      padding: 0 27px 10px;
+    }
+
     &__item:first-child &__text {
       margin-top: -16px;
       flex-grow: 1;
@@ -178,14 +190,6 @@
 
     &__photo {
       .size(300px; 300px);
-    }
-
-    &__author {
-      padding: 17px 27px 0;
-    }
-
-    &__text {
-      padding: 0 27px 10px;
     }
   }
 
