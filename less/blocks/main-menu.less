@@ -6,15 +6,14 @@
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   min-height: 66px;
-  height: 50px;  // fix issue in IE
 
   &__logo {
     position: relative;
     z-index: 20;
-    font-size: 0;
+    top: 7px;
 
     svg {
       left: -73px;
@@ -36,9 +35,9 @@
   &__toggle {
     position: relative;
     z-index: 20;
+    top: 21px;
 
     svg {
-      top: 3px;
       .size(50px; 24px);
       fill: white;
     }
@@ -95,12 +94,16 @@
     min-width: @tablet-content-width;
     min-height: 110px;
 
-    &__logo svg {
-      left: 0;
+    &__logo {
+      top: 29px;
+
+      svg {
+        left: 0;
+      }
     }
 
     &__toggle {
-      top: 1px;
+      top: 44px;
     }
 
     &__wrapper {
@@ -114,6 +117,28 @@
         display: none;
       }
     }
+
+    .nojs & {
+      padding: 0;
+    }
+
+    .nojs &__logo {
+      position: absolute;
+      left: 20px;
+    }
+
+    .nojs &__toggle{
+      display: none;
+    }
+
+    .nojs &__wrapper {
+      position: static;
+      flex-grow: 1;
+
+      &--closed {
+        display: block;
+      }
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -125,7 +150,8 @@
     }
 
     &__wrapper {
-      position: static;
+      position: relative;
+      top: 24px;
       padding: 0;
       min-width: 622px;
       background: none;
@@ -133,16 +159,12 @@
 
     &__item-list {
       flex-direction: row;
+      justify-content: space-between;
       border: none;
     }
 
     &__item {
-      margin-right: 80px;
       border: none;
-
-      &:last-child {
-        margin-right: 0;
-      }
 
       a {
         padding: 14px 0 16px;

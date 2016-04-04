@@ -1,3 +1,5 @@
+document.querySelector("body").classList.remove("nojs");
+
 var menu_link = document.querySelector(".main-menu__toggle");
 var menu_popup = document.querySelector(".main-menu__wrapper");
 var menu_icon = document.querySelector("#icon-menu-burger");

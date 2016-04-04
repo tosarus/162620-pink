@@ -45,7 +45,8 @@
     padding: 13px 0;
   }
 
-  &__author-name {
+  &__author-name cite {
+    display: block;
     .reset();
     .set-font(bold; 18px; 30px);
     color: black;
@@ -84,7 +85,10 @@
 
     &__author-name {
       order: 2;
-      .set-font(bold; 20px; 30px);
+
+      cite {
+        .set-font(bold; 20px; 30px);
+      }
 
       span {
         display: block;
@@ -136,12 +140,15 @@
       min-height: 201px;
       width: 700px;
 
-      svg {
+      &::before {
+        content: "";
         position: absolute;
         .size(79px; 63px);
         top: 30px;
         left: 50%;
         transform: translateX(-50%);
+        .add-bg-image("../img/icon-quotes.svg"; center);
+        background-size: 79px 63px;
       }
     }
 
@@ -152,7 +159,9 @@
     }
 
     &__author-name {
-      .set-font(bold; 24px; 30px);
+      cite {
+        .set-font(bold; 24px; 30px);
+      }
 
       span {
         padding-top: 2px;
